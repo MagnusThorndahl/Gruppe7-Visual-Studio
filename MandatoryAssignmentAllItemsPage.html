@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shop - Nyeste varer</title>
+  <style>
+    body { font-family: Arial, Helvetica, sans-serif; margin: 0; padding: 20px; background:#fff; color:#111; }
+    header { display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; }
+    header a { text-decoration:none; color:black; font-weight:bold; }
+    .search {
+      display:flex; gap:8px; margin-bottom:18px;
+    }
+    .search input[type="search"]{
+      flex:1; padding:10px; border:1px solid #ccc; border-radius:4px;
+    }
+    .search button {
+      padding:10px 14px; background:black; color:white; border:none; border-radius:4px; cursor:pointer;
+    }
+
+
+    .product-grid {
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:16px;
+    }
+
+    .card {
+      border:1px solid #eee;
+      padding:12px;
+      border-radius:6px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      min-height:260px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .card img {
+      max-height:140px;
+      object-fit:contain;
+      margin-bottom:10px;
+    }
+    .card h4 {
+      font-size:14px; margin:6px 0; flex: 1 0 auto;
+    }
+    .card .price {
+      font-weight:bold; margin-top:8px;
+    }
+
+    .status {
+      margin:16px 0; color:#333;
+    }
+
+
+    @media (max-width:900px) { .product-grid { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width:520px) { .product-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="MandatoryAssignment.html">&larr; Tilbage til forsiden</a>
+    <h1>Shop - Nyeste varer</h1>
+    <div></div>
+  </header>
+
+ 
+  <form id="searchForm" class="search" onsubmit="return false;">
+    <input type="search" id="searchInput" placeholder="Søg varer (tryk enter eller brug søgerknap)" />
+    <button id="searchBtn">Søg</button>
+  </form>
+
+  <div id="status" class="status">Indlæser varer…</div>
+
+
+  <div id="grid" class="product-grid" aria-live="polite"></div>
+
+  <script>
+
+    let allProducts = [];  
+    let grid = document.getElementById('grid');
+    let statusDiv = document.getElementById('status');
+    let searchInput = document.getElementById('searchInput');
+    let searchBtn = document.getElementById('searchBtn');
+   
+    const MAX_VISIBLE = 9;
+
+ 
+    async function fetchProducts() {
+      statusDiv.textContent = 'Henter varer fra API…';
+      try {
+    
+        let response = await fetch('https://fakestoreapi.com/products');
+        if (!response.ok) {
+          throw new Error('Server svarede med status ' + response.status);
+        }
+        let data = await response.json();
+        allProducts = data; 
+        renderProducts(allProducts); 
+        statusDiv.textContent = 'Viser ' + Math.min(allProducts.length, MAX_VISIBLE) + ' / ' + Math.min(allProducts.length, MAX_VISIBLE) + ' varer';
+      } catch (err) {
+        console.error('Hent fejl:', err);
+        statusDiv.textContent = 'Fejl ved indlæsning: ' + err.message;
+      }
+    }
+
+   
+    function renderProducts(productsList) {
+      grid.innerHTML = ''; 
+
+      let toShow = productsList.slice(0, MAX_VISIBLE);
+      if (toShow.length === 0) {
+        statusDiv.textContent = 'Ingen varer fundet';
+        return;
+      }
+      
+      toShow.forEach(product => {
+        let card = document.createElement('article');
+        card.className = 'card';
+        card.innerHTML = `
+          <img src="${escapeHtml(product.image)}" alt="${escapeHtml(product.title)}" />
+          <h4 title="${escapeHtml(product.title)}">${trimText(product.title, 70)}</h4>
+          <div class="price">${formatPrice(product.price)}</div>
+          <div style="margin-top:8px;"><small>${escapeHtml(product.category)}</small></div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+  
+    function formatPrice(p) { return '€ ' + Number(p).toFixed(2); }
+    function trimText(str, max) { 
+    return str.length > max ? str.slice(0, max - 1) + '…' : str; 
+  }
+
+  function escapeHtml(s) {
+    
+    return String(s).replace(/[&<>"']/g, function(m){
+      return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[m];
+    });
+  }
+
+  function performSearch() {
+    let q = searchInput.value.trim().toLowerCase();
+    if (q === '') {
+      renderProducts(allProducts);
+      statusDiv.textContent = "Viser " + toShow.length + " / " + toShow.length + "Varer ";
+        'Viser ' + Math.min(allProducts.length, MAX_VISIBLE) + 
+        ' af ' + allProducts.length + ' varer';
+      return;
+    }
+
+    let filtered = allProducts.filter(p => {
+      return (p.title && p.title.toLowerCase().includes(q)) ||
+             (p.category && p.category.toLowerCase().includes(q));
+    });
+
+    renderProducts(filtered);
+    statusDiv.textContent =
+      'Søgeresultat: viser ' + 
+      Math.min(filtered.length, MAX_VISIBLE) + 
+      ' af ' + filtered.length + ' fundne varer';
+  }
+
+  // 4) Events
+  // Opdater søgeresultater dynamisk mens der skrives
+  searchInput.addEventListener('input', performSearch);
+
+  /* 
+  searchBtn.addEventListener('click', function(e){
+    e.preventDefault();
+    performSearch();
+  });
+
+  searchInput.addEventListener('keydown', function(e){
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      performSearch();
+    }
+  });
+  */
+
+  // initialiser: hent produkter når siden loader
+  document.addEventListener('DOMContentLoaded', fetchProducts);
+</script>
+</body>
+</html>

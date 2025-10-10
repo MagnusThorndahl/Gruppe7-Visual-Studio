@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fattigdas</title>
+  <title>Kontakt os - Fattigdas</title>
   <style>
-    /* Announcement Bar */
+    /* ---------- Announcement Bar ---------- */
     .announcement-bar {
-      background-color: black; /* Adidas-style */
+      background-color: black;
       color: white;
       text-align: center;
       padding: 10px;
@@ -20,10 +20,10 @@
       font-weight: bold;
     }
 
-    /* Secondary Navigation (logo) */
+    /* ---------- Secondary Navigation (Logo) ---------- */
     .secondary-navigation {
       display: flex;
-      justify-content: center; /* adidas keeps logo centered */
+      justify-content: center;
       align-items: center;
       padding: 10px 20px;
       background-color: #fff;
@@ -33,7 +33,7 @@
       height: 80px;
     }
 
-    /* Main Navigation (menu) */
+    /* ---------- Main Navigation (Menu) ---------- */
     .main-navigation {
       padding: 15px;
       background-color: #fff;
@@ -57,75 +57,59 @@
       border-bottom: 2px solid black;
     }
 
-    /* Hero Section */
-    .forside-section {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    /* ---------- Contact Section ---------- */
+    .contact-section {
       padding: 60px 40px;
       background-color: #fff;
-      color: black;
       min-height: 50vh;
+      text-align: center;
     }
-    .forside-text {
-      flex: 1;
-      padding-right: 40px;
+    .contact-section h1 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
     }
-    .forside-text h2 {
-      font-size: 2.5rem;
-      margin: 0;
+    .contact-section ul {
+      list-style: none;
+      padding: 0;
+      font-size: 1.1rem;
+      margin-bottom: 25px;
     }
-    .forside-text h3 {
-      font-size: 1.5rem;
-      margin: 10px 0;
-      font-weight: normal;
+    .contact-section li {
+      margin-bottom: 10px;
     }
-    .forside-text p {
-      font-size: 1rem;
-      margin: 15px 0 30px;
-    }
-    .cta-button {
+    .back-link {
       display: inline-block;
       background-color: black;
       color: white;
       padding: 12px 25px;
       text-decoration: none;
       font-weight: bold;
+      border-radius: 3px;
       transition: 0.3s;
     }
-    .cta-button:hover {
+    .back-link:hover {
       background-color: #333;
-    }
-
-    .forside-billede {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-    }
-    .forside-billede img {
-      max-width: 100%;
-      height: auto;
     }
   </style>
 </head>
-<body>  
-  <!-- Announcement bar -->
+<body>
+
+  <!-- ---------- Announcement bar ---------- -->
   <div class="announcement-bar">
     Efterårsudsalg - få op til 50% rabat på vores varer!
     <span class="close-btn">✖</span>
   </div>
 
-  <!-- Secondary navigation (Logo only) -->
+  <!-- ---------- Secondary navigation (Logo) ---------- -->
   <nav class="secondary-navigation">
     <div class="logo">
-      <img src="https://i.imgur.com/p85ZPHh.png" alt="Company logo">
+      <img src="https://i.imgur.com/p85ZPHh.png" alt="Fattigdas logo">
     </div>
   </nav>
 
-  <!-- Main navigation (Menu links) -->
+  <!-- ---------- Main navigation (Menu links) ---------- -->
   <nav class="main-navigation">
     <ul>
-      <li><a href="MandatoryAssignmentAllItemsPage.html">Alle varer</a></li> <!-- now first / leftmost -->
       <li><a href="#">Tøj</a></li>
       <li><a href="#">Sko</a></li>
       <li><a href="#">Accessories</a></li>
@@ -133,32 +117,28 @@
     </ul>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="forside-section">
-    <div class="forside-text">
-      <h2>Netop landet</h2>
-      <h3>Denne uges bedste udvalg</h3>
-      <p>
-        Oplev vores udvalg af nyheder på Fattigdas denne uge.
-        Gå på opdagelse i trendy looks, musthaves og nye designerstyles.
-      </p>
-      <a href="MandatoryAssignmentAllItemsPage.html" class="cta-button">Shop de nyeste varer</a>
-    </div>
-    
-    <div class="forside-billede">
-      <img src="https://images.pexels.com/photos/1192601/pexels-photo-1192601.jpeg" alt="Ny kollektion">
-    </div>
+  <!-- ---------- Contact Section ---------- -->
+  <section class="contact-section">
+    <h1>Kontakt os</h1>
+    <ul>
+      <li><strong>Telefon:</strong> +45 12 34 56 78</li>
+      <li><strong>Email:</strong> Fattigdas@fattigdas.dk</li>
+    </ul>
+    <a href="MandatoryAssignment.html" class="back-link">← Tilbage til forsiden</a>
   </section>
 
-  <!-- Script for closing announcement bar -->
+  <!-- ---------- Script for closing announcement bar ---------- -->
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       const closeBtn = document.querySelector(".close-btn");
       const announcementBar = document.querySelector(".announcement-bar");
-      closeBtn.addEventListener("click", function() {
-        announcementBar.style.display = "none"; // hides bar
-      });
+      if (closeBtn && announcementBar) {
+        closeBtn.addEventListener("click", function() {
+          announcementBar.style.display = "none"; // hides bar
+        });
+      }
     });
   </script>
+
 </body>
 </html>
