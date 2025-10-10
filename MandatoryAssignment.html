@@ -63,8 +63,8 @@
       justify-content: space-between;
       align-items: center;
       padding: 60px 40px;
-      background-color: #fff; /* white background */
-      color: black;            /* black text */
+      background-color: #fff;
+      color: black;
       min-height: 50vh;
     }
     .forside-text {
@@ -84,7 +84,6 @@
       font-size: 1rem;
       margin: 15px 0 30px;
     }
-
     .cta-button {
       display: inline-block;
       background-color: black;
@@ -95,7 +94,7 @@
       transition: 0.3s;
     }
     .cta-button:hover {
-      background-color: #333; /* subtle hover effect */
+      background-color: #333;
     }
 
     .forside-billede {
@@ -110,7 +109,6 @@
   </style>
 </head>
 <body>  
-
   <!-- Announcement bar -->
   <div class="announcement-bar">
     Efterårsudsalg - få op til 50% rabat på vores varer!
@@ -120,17 +118,18 @@
   <!-- Secondary navigation (Logo only) -->
   <nav class="secondary-navigation">
     <div class="logo">
-      <img src="mandatoryassigment2/fattigdaslogo.png" alt="Company logo">
+      <img src="https://i.imgur.com/p85ZPHh.png" alt="Company logo">
     </div>
   </nav>
 
   <!-- Main navigation (Menu links) -->
   <nav class="main-navigation">
     <ul>
+      <li><a href="MandatoryAssignmentAllItemsPage.html">Alle varer</a></li> <!-- now first / leftmost -->
       <li><a href="#">Tøj</a></li>
       <li><a href="#">Sko</a></li>
       <li><a href="#">Accessories</a></li>
-      <li><a href="#">Kontakt os</a></li>
+      <li><a href="ContactInfo.html">Kontakt os</a></li>
     </ul>
   </nav>
 
@@ -143,7 +142,7 @@
         Oplev vores udvalg af nyheder på Fattigdas denne uge.
         Gå på opdagelse i trendy looks, musthaves og nye designerstyles.
       </p>
-      <a href="#" class="cta-button">Shop de nyeste varer</a>
+      <a href="MandatoryAssignmentAllItemsPage.html" class="cta-button">Shop de nyeste varer</a>
     </div>
     
     <div class="forside-billede">
@@ -154,8 +153,8 @@
   <!-- Script for closing announcement bar -->
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      const closeBtn = document.querySelector(".close-btn");
-      const announcementBar = document.querySelector(".announcement-bar");
+      let closeBtn = document.querySelector(".close-btn");
+      let announcementBar = document.querySelector(".announcement-bar");
       closeBtn.addEventListener("click", function() {
         announcementBar.style.display = "none"; // hides bar
       });

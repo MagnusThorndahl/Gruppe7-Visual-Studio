@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt os - Fattigdas</title>
+  <style>
+    /* ---------- Announcement Bar ---------- */
+    .announcement-bar {
+      background-color: black;
+      color: rgb(187, 195, 188);
+      text-align: center;
+      padding: 10px;
+      font-weight: bold;
+    }
+    .close-btn {
+      cursor: pointer;
+      float: right;
+      margin-right: 20px;
+      font-weight: bold;
+    }
+
+    /* ---------- Secondary Navigation (Logo) ---------- */
+    .secondary-navigation {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+    }
+    .secondary-navigation .logo img {
+      height: 80px;
+    }
+
+    /* ---------- Main Navigation (Menu) ---------- */
+    .main-navigation {
+      padding: 15px;
+      background-color: #fff;
+      border-bottom: 1px solid #eee;
+    }
+    .main-navigation ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+    }
+    .main-navigation a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    .main-navigation a:hover {
+      border-bottom: 2px solid black;
+    }
+
+    /* ---------- Contact Section ---------- */
+    .contact-section {
+      padding: 60px 40px;
+      background-color: #fff;
+      min-height: 50vh;
+      text-align: center;
+    }
+    .contact-section h1 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+    }
+    .contact-section ul {
+      list-style: none;
+      padding: 0;
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+    }
+    .contact-section li {
+      margin-bottom: 10px;
+    }
+    .back-link {
+      display: inline-block;
+      background-color: black;
+      color: white;
+      padding: 12px 25px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 3px;
+      transition: 0.3s;
+    }
+    .back-link:hover {
+      background-color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ---------- Announcement bar ---------- -->
+  <div class="announcement-bar">
+    Efterårsudsalg - få op til 50% rabat på vores varer!
+    <span class="close-btn">✖</span>
+  </div>
+
+  <!-- ---------- Secondary navigation (Logo) ---------- -->
+  <nav class="secondary-navigation">
+    <div class="logo">
+      <img src="https://i.imgur.com/p85ZPHh.png" alt="Fattigdas logo">
+    </div>
+  </nav>
+
+  <!-- ---------- Main navigation (Menu links) ---------- -->
+  <nav class="main-navigation">
+    <ul>
+      <li><a href="#">Tøj</a></li>
+      <li><a href="#">Sko</a></li>
+      <li><a href="#">Accessories</a></li>
+      <li><a href="ContactInfo.html">Kontakt os</a></li>
+    </ul>
+  </nav>
+
+  <!-- ---------- Contact Section ---------- -->
+  <section class="contact-section">
+    <h1>Kontakt os</h1>
+    <ul>
+      <li><strong>Telefon:</strong> +45 12 34 56 78</li>
+      <li><strong>Email:</strong> Fattigdas@fattigdas.dk</li>
+    </ul>
+    <a href="MandatoryAssignment.html" class="back-link">← Tilbage til forsiden</a>
+  </section>
+
+  <!-- ---------- Script for closing announcement bar ---------- -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const closeBtn = document.querySelector(".close-btn");
+      const announcementBar = document.querySelector(".announcement-bar");
+      if (closeBtn && announcementBar) {
+        closeBtn.addEventListener("click", function() {
+          announcementBar.style.display = "none"; // hides bar
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

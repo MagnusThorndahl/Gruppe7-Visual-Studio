@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Backend – Tilføj ny vare</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #fff;
+      color: #111;
+    }
+    h1 {
+      text-align: center;
+    }
+    form {
+      max-width: 500px;
+      margin: 0 auto 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+    label {
+      font-weight: bold;
+    }
+    input, textarea, select {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 70px;
+    }
+    button {
+      background-color: black;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #333;
+    }
+
+    /* Product grid */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 16px;
+      margin-top: 30px;
+    }
+    .card {
+      border: 1px solid #eee;
+      border-radius: 6px;
+      padding: 12px;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+    .card img {
+      max-height: 140px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+    .card h4 {
+      font-size: 1rem;
+      margin: 8px 0;
+    }
+    .card .price {
+      font-weight: bold;
+    }
+    .status {
+      text-align: center;
+      margin: 15px 0;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1>Backend – Tilføj ny vare</h1>
+  <!-- Form for adding products -->
+  <form id="addProductForm">
+    <label for="title">Titel:</label>
+    <input type="text" id="title" name="title" required minlength="2">
+
+    <label for="price">Pris (€):</label>
+    <input type="number" id="price" name="price" step="0.01" min="0.01" required>
+
+    <label for="category">Kategori:</label>
+    <input type="text" id="category" name="category" required>
+
+    <label for="description">Beskrivelse:</label>
+    <textarea id="description" name="description" required minlength="5"></textarea>
+
+    <label for="image">Billede (URL):</label>
+    <input type="url" id="image" name="image" value="https://archive.org/download/placeholder-image/placeholder-image.jpg" required>
+
+    <button type="submit">Tilføj vare</button>
+  </form>
+
+  <div class="status" id="status">Indtast oplysninger og tryk “Tilføj vare”.</div>
+
+  <div class="product-grid" id="productGrid" aria-live="polite"></div>
+
+  <script>
+    const form = document.getElementById('addProductForm');
+    const productGrid = document.getElementById('productGrid');
+    const statusDiv = document.getElementById('status');
+    const products = []; // local array for simulated backend data
+
+    // Helper formatting
+    function formatPrice(price) {
+      return '€ ' + Number(price).toFixed(2);
+    }
+
+    // Add product card to grid
+    function renderProducts() {
+      productGrid.innerHTML = '';
+      if (products.length === 0) {
+        statusDiv.textContent = 'Ingen varer indtastet endnu.';
+        return;
+      }
+
+      products.forEach(p => {
+        const card = document.createElement('article');
+        card.className = 'card';
+        card.innerHTML = `
+          <img src="${p.image}" alt="${p.title}">
+          <h4>${p.title}</h4>
+          <div class="price">${formatPrice(p.price)}</div>
+          <small>${p.category}</small>
+          <p style="font-size:0.9rem; margin-top:8px;">${p.description}</p>
+        `;
+        productGrid.appendChild(card);
+      });
+
+      statusDiv.textContent = 'Viser ' + products.length + ' varer';
+    }
+
+    // Listen to form submission
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+
+      // Basic client-side validation
+      const title = form.title.value.trim();
+      const price = parseFloat(form.price.value);
+      const category = form.category.value.trim();
+      const description = form.description.value.trim();
+      const image = form.image.value.trim();
+
+      if (!title || !category || !description || isNaN(price) || price <= 0) {
+        alert('Udfyld alle felter korrekt, før du indsender.');
+        return;
+      }
+
+      // Save new product in local array
+      const newProduct = { title, price, category, description, image };
+      products.unshift(newProduct); // add newest first
+
+      // Reset form (except for image)
+      form.reset();
+      form.image.value = 'https://archive.org/download/placeholder-image/placeholder-image.jpg';
+
+      renderProducts();
+    });
+  </script>
+</body>
+</html>
