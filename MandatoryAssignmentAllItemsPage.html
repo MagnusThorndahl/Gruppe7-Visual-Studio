@@ -83,7 +83,7 @@
     let searchInput = document.getElementById('searchInput');
     let searchBtn = document.getElementById('searchBtn');
    
-    const MAX_VISIBLE = 9;
+    let MAX_VISIBLE = 9;
 
  
     async function fetchProducts() {
@@ -162,25 +162,8 @@
       ' af ' + filtered.length + ' fundne varer';
   }
 
-  // 4) Events
-  // Opdater søgeresultater dynamisk mens der skrives
+
   searchInput.addEventListener('input', performSearch);
-
-  /* 
-  searchBtn.addEventListener('click', function(e){
-    e.preventDefault();
-    performSearch();
-  });
-
-  searchInput.addEventListener('keydown', function(e){
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      performSearch();
-    }
-  });
-  */
-
-  // initialiser: hent produkter når siden loader
   document.addEventListener('DOMContentLoaded', fetchProducts);
 </script>
 </body>
