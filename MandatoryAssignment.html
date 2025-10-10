@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fattigdas</title>
+  <style>
+    /* Announcement Bar */
+    .announcement-bar {
+      background-color: black; /* Adidas-style */
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-weight: bold;
+    }
+    .close-btn {
+      cursor: pointer;
+      float: right;
+      margin-right: 20px;
+      font-weight: bold;
+    }
+
+    /* Secondary Navigation (logo) */
+    .secondary-navigation {
+      display: flex;
+      justify-content: center; /* adidas keeps logo centered */
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+    }
+    .secondary-navigation .logo img {
+      height: 80px;
+    }
+
+    /* Main Navigation (menu) */
+    .main-navigation {
+      padding: 15px;
+      background-color: #fff;
+      border-bottom: 1px solid #eee;
+    }
+    .main-navigation ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+    }
+    .main-navigation a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    .main-navigation a:hover {
+      border-bottom: 2px solid black;
+    }
+
+    /* Hero Section */
+    .forside-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 60px 40px;
+      background-color: #fff; /* white background */
+      color: black;            /* black text */
+      min-height: 50vh;
+    }
+    .forside-text {
+      flex: 1;
+      padding-right: 40px;
+    }
+    .forside-text h2 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+    .forside-text h3 {
+      font-size: 1.5rem;
+      margin: 10px 0;
+      font-weight: normal;
+    }
+    .forside-text p {
+      font-size: 1rem;
+      margin: 15px 0 30px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: black;
+      color: white;
+      padding: 12px 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .cta-button:hover {
+      background-color: #333; /* subtle hover effect */
+    }
+
+    .forside-billede {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+    .forside-billede img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>  
+
+  <!-- Announcement bar -->
+  <div class="announcement-bar">
+    Efterårsudsalg - få op til 50% rabat på vores varer!
+    <span class="close-btn">✖</span>
+  </div>
+
+  <!-- Secondary navigation (Logo only) -->
+  <nav class="secondary-navigation">
+    <div class="logo">
+      <img src="mandatoryassigment2/fattigdaslogo.png" alt="Company logo">
+    </div>
+  </nav>
+
+  <!-- Main navigation (Menu links) -->
+  <nav class="main-navigation">
+    <ul>
+      <li><a href="#">Tøj</a></li>
+      <li><a href="#">Sko</a></li>
+      <li><a href="#">Accessories</a></li>
+      <li><a href="#">Kontakt os</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="forside-section">
+    <div class="forside-text">
+      <h2>Netop landet</h2>
+      <h3>Denne uges bedste udvalg</h3>
+      <p>
+        Oplev vores udvalg af nyheder på Fattigdas denne uge.
+        Gå på opdagelse i trendy looks, musthaves og nye designerstyles.
+      </p>
+      <a href="#" class="cta-button">Shop de nyeste varer</a>
+    </div>
+    
+    <div class="forside-billede">
+      <img src="https://images.pexels.com/photos/1192601/pexels-photo-1192601.jpeg" alt="Ny kollektion">
+    </div>
+  </section>
+
+  <!-- Script for closing announcement bar -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const closeBtn = document.querySelector(".close-btn");
+      const announcementBar = document.querySelector(".announcement-bar");
+      closeBtn.addEventListener("click", function() {
+        announcementBar.style.display = "none"; // hides bar
+      });
+    });
+  </script>
+</body>
+</html>
