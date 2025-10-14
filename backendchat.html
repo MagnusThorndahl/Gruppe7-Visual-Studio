@@ -114,18 +114,19 @@
 
   <div class="product-grid" id="productGrid" aria-live="polite"></div>
 
-  <script>
-    const form = document.getElementById('addProductForm');
-    const productGrid = document.getElementById('productGrid');
-    const statusDiv = document.getElementById('status');
-    const products = []; // local array for simulated backend data
+<script>
+  
+   let form = document.getElementById('addProductForm');
+    let productGrid = document.getElementById('productGrid');
+    let statusDiv = document.getElementById('status');
+    let products = []; // lokal array til simulerede data
 
-    // Helper formatting
+    // Hjælpefunktion til formatering
     function formatPrice(price) {
       return '€ ' + Number(price).toFixed(2);
     }
 
-    // Add product card to grid
+    // Tilføj produktkort til grid
     function renderProducts() {
       productGrid.innerHTML = '';
       if (products.length === 0) {
@@ -134,7 +135,7 @@
       }
 
       products.forEach(p => {
-        const card = document.createElement('article');
+        let card = document.createElement('article');
         card.className = 'card';
         card.innerHTML = `
           <img src="${p.image}" alt="${p.title}">
@@ -149,32 +150,32 @@
       statusDiv.textContent = 'Viser ' + products.length + ' varer';
     }
 
-    // Listen to form submission
+    // Lyt efter form-indsendelse
     form.addEventListener('submit', e => {
       e.preventDefault();
 
-      // Basic client-side validation
-      const title = form.title.value.trim();
-      const price = parseFloat(form.price.value);
-      const category = form.category.value.trim();
-      const description = form.description.value.trim();
-      const image = form.image.value.trim();
+      // Simpel validering
+      let title = form.title.value.trim();
+      let price = parseFloat(form.price.value);
+      let category = form.category.value.trim();
+      let description = form.description.value.trim();
+      let image = form.image.value.trim();
 
       if (!title || !category || !description || isNaN(price) || price <= 0) {
         alert('Udfyld alle felter korrekt, før du indsender.');
         return;
       }
 
-      // Save new product in local array
-      const newProduct = { title, price, category, description, image };
-      products.unshift(newProduct); // add newest first
+      // Gem nyt produkt i lokal array
+      let newProduct = { title, price, category, description, image };
+      products.unshift(newProduct); // tilføj nyeste først
 
-      // Reset form (except for image)
+      // Nulstil formular (bortset fra billede)
       form.reset();
       form.image.value = 'https://archive.org/download/placeholder-image/placeholder-image.jpg';
 
       renderProducts();
     });
-  </script>
+</script>
 </body>
 </html>
