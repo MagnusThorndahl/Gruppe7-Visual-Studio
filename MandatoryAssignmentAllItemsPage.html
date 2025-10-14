@@ -89,7 +89,7 @@
     async function fetchProducts() {
       statusDiv.textContent = 'Henter varer fra API…';
       try {
-    
+      
         let response = await fetch('https://fakestoreapi.com/products');
         if (!response.ok) {
           throw new Error('Server svarede med status ' + response.status);
