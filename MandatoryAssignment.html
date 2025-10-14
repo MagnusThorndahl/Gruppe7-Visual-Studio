@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fattigdas</title>
   <style>
-    /* Announcement Bar */
+    /* Vores annoncerings bar i toppen af siden*/
     .announcement-bar {
-      background-color: black; /* Adidas-style */
+      background-color: black; 
       color: white;
       text-align: center;
       padding: 10px;
@@ -20,10 +20,10 @@
       font-weight: bold;
     }
 
-    /* Secondary Navigation (logo) */
+    /* Vores anden navigations menu*/
     .secondary-navigation {
       display: flex;
-      justify-content: center; /* adidas keeps logo centered */
+      justify-content: center; /* sørger for at vores logo er centreret*/
       align-items: center;
       padding: 10px 20px;
       background-color: #fff;
@@ -33,7 +33,7 @@
       height: 80px;
     }
 
-    /* Main Navigation (menu) */
+    /* Vores hoved-navigations menu */
     .main-navigation {
       padding: 15px;
       background-color: #fff;
@@ -57,7 +57,7 @@
       border-bottom: 2px solid black;
     }
 
-    /* Hero Section */
+    /* Billederne under vores menuer*/
     .forside-section {
       display: flex;
       justify-content: space-between;
@@ -109,20 +109,20 @@
   </style>
 </head>
 <body>  
-  <!-- Announcement bar -->
+  <!-- Indholdet i vores annoncebar -->
   <div class="announcement-bar">
     Efterårsudsalg - få op til 50% rabat på vores varer!
     <span class="close-btn">✖</span>
   </div>
 
-  <!-- Secondary navigation (Logo only) -->
+  <!-- Vores sekundære navigations-menu -->
   <nav class="secondary-navigation">
     <div class="logo">
       <img src="https://i.imgur.com/p85ZPHh.png" alt="Company logo">
     </div>
   </nav>
 
-  <!-- Main navigation (Menu links) -->
+  <!-- Vores hoved-navigations menu, med links til de tilhørende html filer på de menuer der skal være aktive (alle varer og kontaktinformation)-->
   <nav class="main-navigation">
     <ul>
       <li><a href="MandatoryAssignmentAllItemsPage.html">Alle varer</a></li> <!-- now first / leftmost -->
@@ -133,7 +133,7 @@
     </ul>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Indholdet i vores forsidesektion under menuerne-->
   <section class="forside-section">
     <div class="forside-text">
       <h2>Netop landet</h2>
@@ -150,7 +150,7 @@
     </div>
   </section>
 
-  <!-- Script for closing announcement bar -->
+  <!-- javascript til at lukke vores annonceringsbar -->
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       let closeBtn = document.querySelector(".close-btn");
