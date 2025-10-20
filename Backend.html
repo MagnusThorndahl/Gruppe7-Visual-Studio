@@ -52,7 +52,6 @@
       background-color: #333;
     }
 
-    /* Product grid */
     .product-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -90,7 +89,6 @@
 </head>
 <body>
   <h1>Backend – Tilføj ny vare</h1>
-  <!-- Form for at tilføje produkter -->
   <form id="addProductForm">
     <label for="title">Titel:</label>
     <input type="text" id="title" name="title" required minlength="2">
@@ -121,12 +119,10 @@
     let statusDiv = document.getElementById('status');
     let products = []; 
 
-    // Hjælpefunktion til formatering
     function formatPrice(price) {
   return 'DKK ' + Number(price).toFixed(2);
 }
 
-    // Tilføj produktkort til grid
     function renderProducts() {
       productGrid.innerHTML = '';
       if (products.length === 0) {
@@ -150,11 +146,9 @@
       statusDiv.textContent = 'Viser ' + products.length + ' varer';
     }
 
-    // Lyt efter form-indsendelse
     form.addEventListener('submit', e => {
       e.preventDefault();
 
-      // Simpel validering
       let title = form.title.value.trim();
       let price = parseFloat(form.price.value);
       let category = form.category.value.trim();
@@ -166,11 +160,9 @@
         return;
       }
 
-      // Gem nyt produkt i lokal array
       let newProduct = { title, price, category, description, image };
-      products.unshift(newProduct); // tilføj nyeste først
+      products.unshift(newProduct); 
 
-      // Nulstil formular (bortset fra billede)
       form.reset();
       form.image.value = 'https://archive.org/download/placeholder-image/placeholder-image.jpg';
 
