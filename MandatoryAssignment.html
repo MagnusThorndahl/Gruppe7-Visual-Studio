@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fattigdas</title>
   <style>
-    /* Vores annoncerings bar i toppen af siden*/
     .announcement-bar {
       background-color: black; 
       color: white;
@@ -20,10 +19,9 @@
       font-weight: bold;
     }
 
-    /* Vores anden navigations menu*/
     .secondary-navigation {
       display: flex;
-      justify-content: center; /* sørger for at vores logo er centreret*/
+      justify-content: center; 
       align-items: center;
       padding: 10px 20px;
       background-color: #fff;
@@ -33,7 +31,6 @@
       height: 80px;
     }
 
-    /* Vores hoved-navigations menu */
     .main-navigation {
       padding: 15px;
       background-color: #fff;
@@ -57,7 +54,7 @@
       border-bottom: 2px solid black;
     }
 
-    /* Billederne under vores menuer*/
+  
     .forside-section {
       display: flex;
       justify-content: space-between;
@@ -109,23 +106,20 @@
   </style>
 </head>
 <body>  
-  <!-- Indholdet i vores annoncebar -->
   <div class="announcement-bar">
     Efterårsudsalg - få op til 50% rabat på vores varer!
     <span class="close-btn">✖</span>
   </div>
 
-  <!-- Vores sekundære navigations-menu -->
   <nav class="secondary-navigation">
     <div class="logo">
       <img src="https://i.imgur.com/p85ZPHh.png" alt="Company logo">
     </div>
   </nav>
 
-  <!-- Vores hoved-navigations menu, med links til de tilhørende html filer på de menuer der skal være aktive (alle varer og kontaktinformation)-->
   <nav class="main-navigation">
     <ul>
-      <li><a href="MandatoryAssignmentAllItemsPage.html">Alle varer</a></li> <!-- now first / leftmost -->
+      <li><a href="MandatoryAssignmentAllItemsPage.html">Alle varer</a></li> 
       <li><a href="#">Tøj</a></li>
       <li><a href="#">Sko</a></li>
       <li><a href="#">Accessories</a></li>
@@ -133,7 +127,6 @@
     </ul>
   </nav>
 
-  <!-- Indholdet i vores forsidesektion under menuerne-->
   <section class="forside-section">
     <div class="forside-text">
       <h2>Netop landet</h2>
@@ -150,13 +143,12 @@
     </div>
   </section>
 
-  <!-- javascript til at lukke vores annonceringsbar -->
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       let closeBtn = document.querySelector(".close-btn");
       let announcementBar = document.querySelector(".announcement-bar");
       closeBtn.addEventListener("click", function() {
-        announcementBar.style.display = "none"; // hides bar
+        announcementBar.style.display = "none"; 
       });
     });
   </script>
