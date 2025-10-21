@@ -97,7 +97,31 @@
         { img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNQnA1o_CO3uxMmupNeCeKN5-HdqOH4PrgdA&s', answer: 'mexico' },
         { img: 'https://cdn.britannica.com/35/100235-050-CE3936EE/view-CN-Tower-Toronto-skyline-observation-deck.jpg', answer: 'canada' },
         { img: 'https://images.travelseasy.dk/wp-content/uploads/glenfinnan_viadukten_skotland.jpg', answer: 'skotland' },
+<<<<<<< HEAD
     ];
+=======
+        { img: 'https://media.lex.dk/media/62955/article_topimage_8648327150_417dbf4ff0_k.jpg', answer: 'tyskland' },
+        { img: 'https://www.tourcompass.dk/wp-content/uploads/2022/10/hero-china-720-540-1.webp', answer: 'kina' },
+        { img: 'https://www.theplanetedit.com/wp-content/uploads/2021/08/arch-of-triumph-view-pyongyang.jpg', answer: 'nordkorea' },
+        { img: 'https://i.guim.co.uk/img/static/sys-images/Guardian/Pix/pictures/2014/7/17/1405616236467/bc19a5e4-5380-41ac-928b-99889fdc6ece-2060x1373.jpeg?width=700&quality=85&auto=format&fit=max&s=27d35c85d302a4ffa0611a3efbb4d669', answer: 'turkmenistan' },
+        { img: 'https://www.albatros.dk/ibepublic/dam/jcr:3ec316c0-294d-48c4-8fb4-1899685d9ec7/Brasil_Rio_de_Janeiro_Christ_monument_024_SS.jpg', answer: 'brasilien' },
+        { img: 'https://static.sunweb.dk/products/Images/Original/44800000/92000/44892493-Original.jpg?mode=crop&scale=both&width=480&height=360', answer: 'spanien' },
+        { img: 'https://www.state.gov/wp-content/uploads/2019/04/Japan-2107x1406.jpg', answer: 'japan' },
+        { img: 'https://www.trae.dk/wp-content/uploads/2020/03/paris-1170x779.jpg', answer: 'frankrig' },
+        { img: 'https://upload.wikimedia.org/wikipedia/commons/f/f8/Kaaba2.JPG', answer: 'saudi Arabien' },
+        { img: 'https://cdn.content.tuigroup.com/adamtui/2019_4/23_15/2dd8e834-9698-4136-a8ed-aa3800feee9f/iceland_cruise_aurora_borealis_viewsWebOriginalCompressed.jpg?i10c=img.resize(width:2000);img.resize(height:1126);img.crop(width:2000,height:1126)', answer: 'island' },
+        { img: 'https://media.cntraveler.com/photos/5b742b191f8f5f5aacc37829/16:9/w_2560%2Cc_limit/Table-Mountain_GettyImages-103891332.jpg', answer: 'sydafrika' },
+        ];
+        function ShuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+            ShuffleArray(array);
+            countries = countries.slice(0,9);
+
+>>>>>>> d7d4f55 (fejlrettelser)
 
     let container = document.getElementById('quiz-container');
     let correctAnswers = [];
