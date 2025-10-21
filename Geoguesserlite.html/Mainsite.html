@@ -1,14 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geoguesser lite</title>
+    <title>Gæt Landet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        input {
+            margin-top: 10px;
+            width: 90%;
+            padding: 5px;
+        }
+
+        button {
+            margin-top: 30px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+        .correct {
+            border: 2px solid green;
+        }
+
+        .incorrect {
+            border: 2px solid red;
+        }
+    </style>
 </head>
 <body>
-    <h1>Geoguesser lite</h1>
-    <h2>Velkommen</h2>
-    <p>Velkommen til Geogeusser lite! Du skal skrive hvilket land man befinder sig i på hvert billede</p>
-    
+
+<h1>Gæt Landet</h1>
+<p>Skriv navnet på landet under hvert billede</p>
+
+<div class="grid" id="quiz-container">
+    <!-- JavaScript indsætter indholdet her -->
+</div>
+
+<button onclick="checkAnswers()">Tjek svar</button>
+
+<script>
+    const countries = [
+        { img: 'https://flagcdn.com/w320/fr.png', answer: 'frankrig' },
+        { img: 'https://flagcdn.com/w320/de.png', answer: 'tyskland' },
+        { img: 'https://flagcdn.com/w320/it.png', answer: 'italien' },
+        { img: 'https://flagcdn.com/w320/es.png', answer: 'spanien' },
+        { img: 'https://flagcdn.com/w320/jp.png', answer: 'japan' },
+        { img: 'https://flagcdn.com/w320/us.png', answer: 'usa' },
+        { img: 'https://flagcdn.com/w320/br.png', answer: 'brasilien' },
+        { img: 'https://flagcdn.com/w320/za.png', answer: 'sydafrika' },
+        { img: 'https://flagcdn.com/w320/in.png', answer: 'indien' },
+    ];
+
+    const container = document.getElementById('quiz-container');
+
+    countries.forEach((country, index) => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+            <img src="${country.img}" alt="Land ${index + 1}">
+            <input type="text" id="input-${index}" placeholder="Landets navn">
+        `;
+        container.appendChild(card);
+    });
+
+    function checkAnswers() {
+        let allCorrect = true;
+
+        countries.forEach((country, index) => {
+            const input = document.getElementById(`input-${index}`);
+            const userAnswer = input.value.trim().toLowerCase();
+
+            if (userAnswer === country.answer) {
+                input.classList.remove('incorrect');
+                input.classList.add('correct');
+            } else {
+                input.classList.remove('correct');
+                input.classList.add('incorrect');
+                allCorrect = false;
+            }
+        });
+
+        if (allCorrect) {
+            alert("Alle svar er korrekte! Du bliver nu sendt videre 😊");
+            window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"; // Du kan ændre linket
+        } else {
+            alert("Der er nogle forkerte svar. Prøv igen!");
+        }
+    }
+</script>
+
 </body>
 </html>
