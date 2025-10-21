@@ -35,34 +35,40 @@
         }
 
         button {
-            margin-top: 30px;
-            padding: 10px 20px;
-            font-size: 16px;
+            margin-top: 10px;
+            padding: 6px 12px;
+            font-size: 14px;
+            cursor: pointer;
         }
 
         .correct {
             border: 2px solid green;
+            background-color: #e5ffe5;
         }
 
         .incorrect {
             border: 2px solid red;
+            background-color: #ffe5e5;
+        }
+
+        .feedback {
+            margin-top: 5px;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
 
 <h1>Gæt Landet</h1>
-<p>Skriv navnet på landet under hvert billede</p>
+<p>Skriv landets navn under billedet og klik "Tjek svar"</p>
 
 <div class="grid" id="quiz-container">
     <!-- JavaScript indsætter indholdet her -->
 </div>
 
-<button onclick="checkAnswers()">Tjek svar</button>
-
 <script>
-    const countries = [
-        { img: 'https://www.opdagdanmark.dk/wp-content/uploads/2018/06/mennesker-ved-havet-jazia-wiki.jpg', answer: 'danmark' },
+    let countries = [
+        { img: 'https://flagcdn.com/w320/fr.png', answer: 'frankrig' },
         { img: 'https://flagcdn.com/w320/de.png', answer: 'tyskland' },
         { img: 'https://flagcdn.com/w320/it.png', answer: 'italien' },
         { img: 'https://flagcdn.com/w320/es.png', answer: 'spanien' },
@@ -73,40 +79,55 @@
         { img: 'https://flagcdn.com/w320/in.png', answer: 'indien' },
     ];
 
-    const container = document.getElementById('quiz-container');
+    let container = document.getElementById('quiz-container');
+    let correctAnswers = [];
 
-    countries.forEach((country, index) => {
-        const card = document.createElement('div');
+    for (let i = 0; i < countries.length; i++) {
+        correctAnswers.push(false);
+
+        let country = countries[i];
+        let card = document.createElement('div');
         card.className = 'card';
         card.innerHTML = `
-            <img src="${country.img}" alt="Land ${index + 1}">
-            <input type="text" id="input-${index}" placeholder="Landets navn">
+            <img src="${country.img}" alt="Land ${i + 1}">
+            <input type="text" id="input-${i}" placeholder="Landets navn">
+            <button onclick="checkSingleAnswer(${i})">Tjek svar</button>
+            <div id="feedback-${i}" class="feedback"></div>
         `;
         container.appendChild(card);
-    });
+    }
 
-    function checkAnswers() {
+    function checkSingleAnswer(index) {
+        let input = document.getElementById(`input-${index}`);
+        let feedback = document.getElementById(`feedback-${index}`);
+        let userAnswer = input.value.trim().toLowerCase();
+        let correctAnswer = countries[index].answer;
+
+        if (userAnswer === correctAnswer) {
+            input.classList.remove('incorrect');
+            input.classList.add('correct');
+            feedback.textContent = "Korrekt!";
+            feedback.style.color = "green";
+            correctAnswers[index] = true;
+        } else {
+            input.classList.remove('correct');
+            input.classList.add('incorrect');
+            feedback.textContent = "Forkert – prøv igen!";
+            feedback.style.color = "red";
+            correctAnswers[index] = false;
+        }
+
         let allCorrect = true;
-
-        countries.forEach((country, index) => {
-            const input = document.getElementById(`input-${index}`);
-            const userAnswer = input.value.trim().toLowerCase();
-
-            if (userAnswer === country.answer) {
-                input.classList.remove('incorrect');
-                input.classList.add('correct');
-            } else {
-                input.classList.remove('correct');
-                input.classList.add('incorrect');
+        for (let i = 0; i < correctAnswers.length; i++) {
+            if (!correctAnswers[i]) {
                 allCorrect = false;
+                break;
             }
-        });
+        }
 
         if (allCorrect) {
             alert("Alle svar er korrekte! Du bliver nu sendt videre 😊");
-            window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"; // Du kan ændre linket
-        } else {
-            alert("Der er nogle forkerte svar. Prøv igen!");
+            window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"; // Skift link hvis ønsket
         }
     }
 </script>
