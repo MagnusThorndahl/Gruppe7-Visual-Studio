@@ -105,13 +105,13 @@
         { img: 'https://static.sunweb.dk/products/Images/Original/44800000/92000/44892493-Original.jpg?mode=crop&scale=both&width=480&height=360', answer: 'spanien' },
         { img: 'https://www.state.gov/wp-content/uploads/2019/04/Japan-2107x1406.jpg', answer: 'japan' },
         { img: 'https://www.trae.dk/wp-content/uploads/2020/03/paris-1170x779.jpg', answer: 'frankrig' },
-        { img: 'https://upload.wikimedia.org/wikipedia/commons/f/f8/Kaaba2.JPG', answer: 'saudi Arabien' },
+        { img: 'https://upload.wikimedia.org/wikipedia/commons/f/f8/Kaaba2.JPG', answer: 'saudi arabien' },
         { img: 'https://www.profil-rejser.dk/wp-content/uploads/2024/08/island-nordlys-over-vand-sck.jpg', answer: 'island' },
         { img: 'https://media.cntraveler.com/photos/5b742b191f8f5f5aacc37829/16:9/w_2560%2Cc_limit/Table-Mountain_GettyImages-103891332.jpg', answer: 'sydafrika' },
         ];
         function ShuffleArray(array) {
             for (let i = array.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
+                let j = Math.floor(Math.random() * (i + 1));
                 [array[i], array[j]] = [array[j], array[i]];
             }
         }
