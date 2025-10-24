@@ -75,17 +75,22 @@
             margin-top: 5px;
             font-weight: bold;
         }
+.card-header {
+    border: 1px solid #ccc;
+    padding: 10px 20px; /* mindre padding */
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    max-width: 400px; /* smallere boks */
+    margin: 0 auto 25px auto; /* centreret og lidt luft under */
+}
     </style>
 </head>
 <body>
 
-<div class="card">
+<div class="card-header">
   <h1>Gæt Landet</h1>
   <p>Skriv landets navn under billedet og klik "Tjek svar"</p>
-</div>
-
-<div class="grid">
-  <!-- dine kort går her -->
 </div>
 
 <div class="grid" id="quiz-container">
