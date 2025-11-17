@@ -1,0 +1,3 @@
+Mulighed A:
+Bubble Sort Algo
+Simpel at implementere, og at bruge som sammenlignign algoritme. 

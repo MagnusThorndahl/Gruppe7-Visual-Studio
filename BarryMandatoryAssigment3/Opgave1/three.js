@@ -10,13 +10,13 @@ let rejser = {
 };
 
 /*
-Good:
-It is a unique ID per person.
-It would be easy to lookup and find journeys for a specific card
+Godt:
+Det er et unikt ID per person.
+Det vil være nemt at slå op og finde rejser for et specifikt kort.
 
-Bad: 
-If a person has multiple journeys, it would be hard to store them all under the same key.
-Also if a person loses their card and gets a new one, it would be hard to track their journeys across different cards.
+Dårligt:
+Hvis en person har flere rejser, vil det være svært at gemme dem alle under samme nøgle.
+Hvis en person mister sit kort og får et nyt, vil det være svært at spore rejserne på tværs af kort.
 */
 
 
@@ -32,30 +32,31 @@ let rejser = {
 };
 
 /*
+Godt:
+Det er et unikt tidsstempel for hver rejse.
+Det vil være nemt at slå op og finde rejser, der startede på et bestemt tidspunkt.
 
-Good:
-It is a unique timestamp for each journey.
-It would be easy to lookup and find journeys that started at a specific time.   
-  
-Bad: It would require us to scan ALL entries
+Dårligt:
+Det kræver, at vi scanner ALLE poster for at finde en specifik person.
 */
 
 
 let rejser = {
-  1: {
-    passagerNavn: "Barry",
-    startDestination: "Kongens Nytorv",
-    slutDestination: "Nørreport St.",
-    checkIndTid: "2024-06-19T08:00:00",
-    checkUdTid: "2024-06-19T08:10:00",
-    rejsePris: "19 DKK"
-  }
+    1: {
+        passagerNavn: "Barry",
+        startDestination: "Kongens Nytorv",
+        slutDestination: "Nørreport St.",
+        checkIndTid: "2024-06-19T08:00:00",
+        checkUdTid: "2024-06-19T08:10:00",
+        rejsePris: "19 DKK"
+    }
 };
 
 /*  
-        Good:  
-        It is simple and easy to implement.
-        Each journey can be uniquely identified by its ID.
-        Bad:    
-        It requires us to maintain a separate counter for IDs.
+Godt:  
+Det er simpelt og nemt at implementere.
+Hver rejse kan unikt identificeres via sit ID.
+
+Dårligt:    
+Det kræver, at vi holder styr på en separat tæller for ID’er.
 */
