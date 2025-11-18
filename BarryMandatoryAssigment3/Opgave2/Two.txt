@@ -1,1 +1,1 @@
-I dette datasæt er bubble sort det mere effektive, da datasættet kun indeholder meget få elementer.
+I dette datasæt er bubble sort det mere effektive, da datasættet kun indeholder meget få elementer og den simple "nabosammenligning" kræver mindre beregning end qucik sorts algoritme.
