@@ -1,3 +1,8 @@
 Mulighed A:
 Bubble Sort Algo
-Simpel at implementere, og at bruge som sammenlignign algoritme. 
+Simpel at implementere, og at bruge som sammenlignign algoritme.
+
+Mulighed B:
+Quick sort algoritme
+Quick sort er mere kompleks og sværere at implementere. Quick sort opdeler data omkring et element i værdier der er mindre og større end og sorterer de to dele.
+
