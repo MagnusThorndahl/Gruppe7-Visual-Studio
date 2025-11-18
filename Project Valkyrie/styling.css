@@ -1,0 +1,196 @@
+/* ==== GENEREL SIDE-STYLING ==== */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #d6f1f4;
+}
+
+/* ==== NAVIGATION BAR ==== */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 0 40px;
+  height: 80px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* ==== LOGO ==== */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #1a1a40;
+}
+
+.logo-img {
+  height: 60px;             /* visually big, but balanced */
+  width: auto;
+  object-fit: contain;
+}
+
+/* ==== NAVIGATION LINKS ==== */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links > li > a {
+  text-decoration: none;
+  color: #1a1a40;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  padding: 8px;
+  display: block;
+}
+
+.nav-links > li > a:hover {
+  color: #0056b3;
+}
+
+/* ==== DROPDOWN MENUS ==== */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  min-width: 180px;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #1a1a40;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f2f2f2;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* ==== LOGIN/REGISTER BUTTONS ==== */
+.auth-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.auth-buttons button {
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  padding: 8px 18px;
+  border-radius: 20px;
+  margin-left: 10px;
+  transition: all 0.3s ease;
+}
+
+.login {
+  background: none;
+  color: #1a1a40;
+}
+
+.signup {
+  background-color: #e4007c;
+  color: white;
+}
+
+.signup:hover {
+  background-color: #c4006a;
+}
+
+/* ==== HERO SECTION ==== */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: #d6f1f4;
+}
+
+.message-bar {
+  background-color: #e1f6f9;
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 30px;
+  border-radius: 50px;
+  color: #002b5b;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-weight: 500;
+  font-size: 1.1em;
+}
+
+.hero-content {
+  margin-top: 50px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-content h1 {
+  color: #1a1a40;
+  font-size: 2.6em;
+  margin-bottom: 10px;
+}
+
+.hero-content h2 {
+  color: #333;
+  font-size: 1.2em;
+  font-weight: 400;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+.hero-content p {
+  color: #333;
+  font-size: 1.1em;
+  margin-top: 25px;
+  line-height: 1.6;
+}
+
+/* ==== RESPONSIV DESIGN ==== */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 15px 20px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  .auth-buttons {
+    margin-top: 10px;
+  }
+
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+  }
+}
