@@ -4,7 +4,7 @@ Vi kigger så på vores dictionary opslag, som i gennemsnit er O(1). Det kan vi 
 
 Så kan vi beregne tidsforskellen med en aritmatisk operation, O(1).
 
-Vores fatest_travel_time ved vi hvad gør (giver den hurtigste rejsetid mellem to stationer), men ikke HVORDAN den gør det. Vi vil dog antage at den er i konstant tid og viser korteste vej, så vi siger O(1).
+Vores fastest_travel_time ved vi hvad gør (giver den hurtigste rejsetid mellem to stationer), men ikke HVORDAN den gør det. Vi vil dog antage at den er i konstant tid og viser korteste vej, så vi siger O(1).
 
 Vores SuspiciousCards er også O(1).
 
