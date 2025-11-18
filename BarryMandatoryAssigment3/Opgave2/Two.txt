@@ -1,0 +1,1 @@
+I dette datasæt er bubble sort det mere effektive, da datasættet kun indeholder meget få elementer.
