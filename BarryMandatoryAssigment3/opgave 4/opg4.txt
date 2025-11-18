@@ -1,10 +1,8 @@
-// Input: journeys[]  (sorted by time), largest valid travel time = MaximumTime
-// Output: list of cardIDs that have suspicious journeys
 
 function find_fraudulent_cards(journeys):
 
     suspiciousCards = empty set
-    // Gemmer kort, der er mistænkelige
+    // her gemmer vi kort der er mistænkelige
 
     lastJourneyByCard = empty dictionary
     // Holder den seneste rejse pr. kort
