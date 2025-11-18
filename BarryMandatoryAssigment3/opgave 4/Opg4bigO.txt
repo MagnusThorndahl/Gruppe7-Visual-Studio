@@ -1,0 +1,14 @@
+I vores forløkke er der én gennemgang af vores journeys. Vi kan sige at der er n rejser, så løkken tager O(n).
+
+Vi kigger så på vores dictionary opslag, som i gennemsnit er O(1). Det kan vi derfor stadig kalde O(n).
+
+Så kan vi beregne tidsforskellen med en aritmatisk operation, O(1).
+
+Vores fatest_travel_time ved vi hvad gør (giver den hurtigste rejsetid mellem to stationer), men ikke HVORDAN den gør det. Vi vil dog antage at den er i konstant tid og viser korteste vej, så vi siger O(1).
+
+Vores SuspiciousCards er også O(1).
+
+Ved gennemgang af alt pseudokode, kan vi konkludere at der blot er konstante operationer så vores bio o analyse = O(n).
+
+Vores kode kan konkluderes som hurtig og optimalt skalerende.
+
