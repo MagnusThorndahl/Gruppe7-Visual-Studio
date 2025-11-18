@@ -5,33 +5,33 @@ function find_fraudulent_cards(journeys):
     // her gemmer vi kort der er mistænkelige
 
     lastJourneyByCard = empty dictionary
-    // Holder den seneste rejse pr. kort
+    // holder den seneste rejse pr. kort
 
     for each journey in journeys:
-        // Tjekker hver rejse i kronologisk rækkefølge
+        // tjekker hver rejse i kronologisk rækkefølge
 
         card = journey.cardID
-        // Hent kort-ID
+        // vi henter kort-ID
 
         if card exists in lastJourneyByCard:
-            // Har vi set dette kort før?
+            // tjekker om den har set rejsekortet før
 
             previous = lastJourneyByCard[card]
-            // Hent den tidligere rejse for samme kort
+            // henter den tidligere rejse for samme kort
 
             timeGap = journey.checkInTime - previous.checkOutTime
-            // Tidsforskel mellem rejserne
+            // kigger på tidsforskel mellem rejserne
 
             minRequiredTime = fastest_travel_time(previous.endStation,
                                                   journey.startStation)
-            // Mindste teoretiske rejsetid mellem stationerne
+            // finder den mindste teoretiske rejsetid mellem stationerne
 
             if timeGap < minRequiredTime:
                 add card to suspiciousCards
-            // Tiden er for kort → kortet er mistænkeligt
+            // hvis tiden er for kort er kortet er mistænkeligt
 
         lastJourneyByCard[card] = journey
-        // Opdater den seneste rejse for kortet
+        // opdater den seneste rejse for kortet
 
     return suspiciousCards
-    // Returner alle mistænkelige kort
+    // returner alle mistænkelige kort
