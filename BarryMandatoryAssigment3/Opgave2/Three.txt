@@ -1,0 +1,1 @@
+Tiderne er gemt i tekststrenge i formatet "år, måned, dag, time, minut og sekund" som gør at javascript vil sortere dem korrekt efter tid fordi de starter med de mest betydende dele. Det betyder at alfabetisk sortering automatisk giver den rigtige kronologiske rækkefølge.
