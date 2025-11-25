@@ -241,12 +241,7 @@ main {
 .bookshop-controls {
   display: flex;
   justify-content: center;
-  gap: 1rem;
-  padding: 1.5rem 1rem;
-  background: #f7f7f9;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-  margin-bottom: 25px;
+  padding: 1rem 0;
 }
 
 #search-bar {
