@@ -331,15 +331,14 @@ main {
   transform: scale(1.05);
 }
 
-/* --- PARTNERSIDE STYLING --- */
 
-/* Layout af sektionen */
 .partners {
   padding: 80px 8%;
-  background: #f5f7fa;            /* Lys baggrund som harmonerer med dit design */
+  background: #f5f7fa;
   min-height: 100vh;
 }
 
+/* Titel */
 .partners h1 {
   text-align: center;
   font-size: 2.6rem;
@@ -348,66 +347,65 @@ main {
   color: #1a1a1a;
 }
 
-/* Grid til partnercards */
+/* GRID – matcher fotoGalleri */
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 35px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+  gap: 25px; 
+  padding: 10px;
 }
 
-/* Kort generel stil */
+/* Card */
 .partner-card {
-  background: #ffffff;
-  padding: 25px;
-  border-radius: 18px; 
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.25s ease;
-  text-align: center;
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
   border: 1px solid #e6e6e6;
+  transition: 0.25s ease;
+  text-align: center;
 }
 
 /* Hover-effekt */
 .partner-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
 }
 
-/* Logo styling */
-.partner-card .partner-logo {
+/* Logo */
+.partner-logo {
   width: 100%;
-  max-width: 160px;
+  max-width: 150px;
   max-height: 80px;
   object-fit: contain;
-  margin: 0 auto 20px auto;
-  display: block;
+  margin: 0 auto 15px;
 }
 
 /* Virksomhedsnavn */
 .partner-card h2 {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-  color: #222;
+  font-size: 1.2rem;
   font-weight: 700;
+  color: #222;
+  margin-bottom: 10px;
 }
 
 /* Beskrivelse */
 .partner-card p {
   font-size: 0.95rem;
   color: #555;
+  line-height: 1.4;
   margin-bottom: 20px;
-  line-height: 1.5;
 }
 
-/* “Læs mere”-knap */
+/* Læs mere-knap */
 .read-more {
   display: inline-block;
-  padding: 10px 18px;
+  padding: 10px 16px;
   background: #0066ff;
   color: white;
   text-decoration: none;
   border-radius: 8px;
   font-weight: 600;
-  transition: background 0.2s ease;
 }
 
 .read-more:hover {
