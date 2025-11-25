@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fotogalleri | KommIT Union</title>
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="styling.css">
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="https://i.imgur.com/V1zzEfc.png" alt="KommIT Union Logo" class="logo-img">
+      <span>KommIT Union</span>
+    </div>
+
+    <nav>
+      <ul class="nav-links">
+        <li><a href="kommitUnion.html">Hjem</a></li>
+        <li class="dropdown">
+          <a href="#" class="active">Begivenheder ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="fotoGalleri.html" class="active">Fotos</a></li>
+            <li><a href="#">Begivenhedskalender</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">Ressourcer ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="BookShop.html">Bogshop</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Nyhedsbrev</a></li>
+        <li><a href="#">Partnere</a></li>
+        <li><a href="omOs.html">Om</a></li>
+      </ul>
+    </nav>
+
+    <div class="auth-buttons">
+      <button class="login">Log ind</button>
+      <button class="signup">Opret bruger</button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Fotogalleri</h1>
+    <p>Et glimt af vores arrangementer og studieliv i KommIT Union.</p>
+  </section>
+
+  <!-- Main Content -->
+  <main class="photo-gallery">
+    <section class="gallery-grid">
+      <!-- Images will be added here (manually or later via JS) -->
+      <!-- Example placeholders -->
+      <img src="https://picsum.photos/id/1001/400/300" alt="Eksempelbillede 1">
+      <img src="https://picsum.photos/id/1005/400/300" alt="Eksempelbillede 2">
+      <img src="https://picsum.photos/id/1010/400/300" alt="Eksempelbillede 3">
+      <img src="https://picsum.photos/id/1011/400/300" alt="Eksempelbillede 4">
+      <img src="https://picsum.photos/id/1012/400/300" alt="Eksempelbillede 5">
+      <img src="https://picsum.photos/id/1013/400/300" alt="Eksempelbillede 6">
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2024 KommIT Union – Fotogalleri</p>
+  </footer>
+
+  <!-- Future JS connection -->
+  <script src="fotoGalleri.js" defer></script>
+</body>
+</html>
