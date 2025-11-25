@@ -15,22 +15,43 @@
 
     .grid-container {
       display: grid;
-      grid-template-columns: repeat(9, 1fr); /* 9 kolonner */
-      gap: 15px;
+      grid-template-columns: repeat(3, 1fr); /* 3 kolonner som standard, bedre for tekst */
+      gap: 20px;
     }
 
     .job-card {
       background-color: #f8f8f8;
       padding: 15px;
       border-radius: 8px;
-      text-align: center;
+      text-align: left;
       transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
-    .job-card a {
+    .job-card h3 {
+      margin: 0 0 5px 0;
+      font-size: 1.1em;
+      color: #00796b;
+    }
+
+    .job-card p {
+      margin: 3px 0;
+      color: #555;
+      font-size: 0.9em;
+    }
+
+    .job-card a.apply-btn {
+      margin-top: 10px;
+      display: inline-block;
       text-decoration: none;
-      color: #333;
-      font-weight: bold;
+      background-color: #00796b;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 0.9em;
+      text-align: center;
     }
 
     .job-card:hover {
@@ -53,26 +74,20 @@
       color: #555;
     }
 
-    /* --- Responsive grid --- */
+    /* --- Responsivt grid --- */
     @media (max-width: 1200px) {
       .grid-container {
-        grid-template-columns: repeat(6, 1fr);
+        grid-template-columns: repeat(3, 1fr);
       }
     }
 
     @media (max-width: 900px) {
       .grid-container {
-        grid-template-columns: repeat(4, 1fr);
-      }
-    }
-
-    @media (max-width: 600px) {
-      .grid-container {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    @media (max-width: 400px) {
+    @media (max-width: 600px) {
       .grid-container {
         grid-template-columns: 1fr;
       }
@@ -124,23 +139,85 @@
   <section class="hero small-hero">
     <div class="hero-content">
       <h1>Jobforslag</h1>
-      <p>Find inspiration til studierelevante jobs og karriereveje inden for Kommunikation & IT.</p>
+      <p>Find inspiration til studiejobs og karriereveje inden for Kommunikation & IT.</p>
     </div>
   </section>
 
   <!-- JOB GRID -->
   <section class="job-grid">
-    <h2>Mulige jobs</h2>
+    <h2>Mulige studiejobs</h2>
     <div class="grid-container">
-      <div class="job-card"><a href="#">Job 1</a></div>
-      <div class="job-card"><a href="#">Job 2</a></div>
-      <div class="job-card"><a href="#">Job 3</a></div>
-      <div class="job-card"><a href="#">Job 4</a></div>
-      <div class="job-card"><a href="#">Job 5</a></div>
-      <div class="job-card"><a href="#">Job 6</a></div>
-      <div class="job-card"><a href="#">Job 7</a></div>
-      <div class="job-card"><a href="#">Job 8</a></div>
-      <div class="job-card"><a href="#">Job 9</a></div>
+      <div class="job-card">
+        <h3>Social Media Assistent</h3>
+        <p>Firma: Kreativ Media</p>
+        <p>Lokation: København</p>
+        <p>Arbejdsopgaver: Hjælp med content creation og SoMe-strategi.</p>
+        <a href="#" class="apply-btn">Ansøg nu</a>
+      </div>
+
+      <div class="job-card">
+        <h3>IT-supporter</h3>
+        <p>Firma: Tech Solutions</p>
+        <p>Lokation: Aarhus</p>
+        <p>Arbejdsopgaver: Teknisk support for studerende og virksomheder.</p>
+        <a href="#" class="apply-btn">Ansøg nu</a>
+      </div>
+
+      <div class="job-card">
+        <h3>Kommunikationsmedarbejder</h3>
+        <p>Firma: Nordic Media</p>
+        <p>Lokation: Odense</p>
+        <p>Arbejdsopgaver: Skriv artikler og hjælp med intern kommunikation.</p>
+        <a href="#" class="apply-btn">Ansøg nu</a>
+      </div>
+
+      <div class="job-card">
+        <h3>Webudvikler</h3>
+        <p>Firma: WebTech</p>
+        <p>Lokation: København</p>
+        <p>Arbejdsopgaver: Udvikling af websites og små apps.</p>
+        <a href="#" class="apply-btn">Ansøg nu</a>
+      </div>
+
+      <div class="job-card">
+        <h3>Grafisk Designer</h3>
+        <p>Firma: DesignHub</p>
+        <p>Lokation: Aalborg</p>
+        <p>Arbejdsopgaver: Skab grafik til kampagner og sociale medier.</p>
+        <a href="#" class="apply-btn">Ansøg nu</a>
+      </div>
+
+      <div class="job-card">
+        <h3>Projektassistent</h3>
+        <p>Firma: IT Solutions</p>
+        <p>Lokation: København</p>
+        <p>Arbejdsopgaver: Støtte i projekter og koordinering af opgaver.</p>
+        <a href="#" class="apply-btn">Ansøg nu</a>
+      </div>
+
+      <div class="job-card">
+        <h3>Content Writer</h3>
+        <p>Firma: MediaWorks</p>
+        <p>Lokation: Odense</p>
+        <p>Arbejdsopgaver: Skriv blogindlæg og marketingmateriale.</p>
+        <a href="#" class="apply-btn">Ansøg nu</a>
+      </div>
+
+      <div class="job-card">
+        <h3>Dataanalytiker</h3>
+        <p>Firma: DataCorp</p>
+        <p>Lokation: Aarhus</p>
+        <p>Arbejdsopgaver: Analyse af data og rapportering til ledelsen.</p>
+        <a href="#" class="apply-btn">Ansøg nu</a>
+      </div>
+
+      <div class="job-card">
+        <h3>Projektleder Trainee</h3>
+        <p>Firma: Nordic Projects</p>
+        <p>Lokation: København</p>
+        <p>Arbejdsopgaver: Følg projekter, lær projektstyring og koordinering.</p>
+        <a href="#" class="apply-btn">Ansøg nu</a>
+      </div>
     </div>
   </section>
 
