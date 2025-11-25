@@ -235,6 +235,46 @@ main {
   text-decoration: underline;
 }
 
+/* =========================
+   ==== BOOKSHOP SEARCH BAR ====
+   ========================= */
+.bookshop-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.5rem 1rem;
+  background: #f7f7f9;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  margin-bottom: 25px;
+}
+
+#search-bar {
+  width: 100%;
+  max-width: 450px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 999px;
+  background: #ffffff;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+}
+
+#search-bar::placeholder {
+  color: #999;
+}
+
+#search-bar:hover {
+  border-color: #b5b5b5;
+}
+
+#search-bar:focus {
+  border-color: #A7372B;
+  box-shadow: 0 0 0 3px rgba(167, 55, 43, 0.18);
+  transform: translateY(-1px);
+}
+
 /* ======================
    ==== RESPONSIVE DESIGN ====
    ====================== */
