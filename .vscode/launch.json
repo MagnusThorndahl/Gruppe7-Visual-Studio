@@ -2,7 +2,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "type": "edge",                 // or "chrome"
+      "type": "chrome",                 // or "chrome"
       "request": "launch",
       "name": "Open current file in browser",
       "file": "${file}"               // open this file instead of localhost
