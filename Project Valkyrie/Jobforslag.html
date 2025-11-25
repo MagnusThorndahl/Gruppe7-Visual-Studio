@@ -5,6 +5,79 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jobforslag – KommIT Union</title>
   <link rel="stylesheet" href="styling.css">
+  <style>
+    /* --- Grid til jobforslag --- */
+    .job-grid {
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 20px;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(9, 1fr); /* 9 kolonner */
+      gap: 15px;
+    }
+
+    .job-card {
+      background-color: #f8f8f8;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .job-card a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .job-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    /* --- Hero styling --- */
+    .hero.small-hero {
+      padding: 60px 20px;
+      text-align: center;
+      background-color: #e0f7fa;
+    }
+
+    .hero-content h1 {
+      margin-bottom: 10px;
+    }
+
+    .hero-content p {
+      color: #555;
+    }
+
+    /* --- Responsive grid --- */
+    @media (max-width: 1200px) {
+      .grid-container {
+        grid-template-columns: repeat(6, 1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .grid-container {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 400px) {
+      .grid-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -55,25 +128,20 @@
     </div>
   </section>
 
-  <!-- JOBLISTE -->
-  <section class="job-list">
-    <h2>Mulige studiejobs</h2>
-
-    <div class="job-card">
-      <h3>Social Media Assistent</h3>
-      <p>Arbejd med SoMe-strategi, content creation og community management.</p>
+  <!-- JOB GRID -->
+  <section class="job-grid">
+    <h2>Mulige jobs</h2>
+    <div class="grid-container">
+      <div class="job-card"><a href="#">Job 1</a></div>
+      <div class="job-card"><a href="#">Job 2</a></div>
+      <div class="job-card"><a href="#">Job 3</a></div>
+      <div class="job-card"><a href="#">Job 4</a></div>
+      <div class="job-card"><a href="#">Job 5</a></div>
+      <div class="job-card"><a href="#">Job 6</a></div>
+      <div class="job-card"><a href="#">Job 7</a></div>
+      <div class="job-card"><a href="#">Job 8</a></div>
+      <div class="job-card"><a href="#">Job 9</a></div>
     </div>
-
-    <div class="job-card">
-      <h3>IT-supporter</h3>
-      <p>Hjælp virksomheder eller skoler med teknisk support og IT-løsninger.</p>
-    </div>
-
-    <div class="job-card">
-      <h3>Kommunikationsmedarbejder</h3>
-      <p>Skriv artikler, hjælp med intern/ekstern kommunikation og små grafiske opgaver.</p>
-    </div>
-
   </section>
 
 </body>
