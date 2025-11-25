@@ -1,11 +1,87 @@
-users open page
-      ↓
-browser loads BookShop.html
-      ↓
-BookShop.html loads bookshop.js
-      ↓
-bookshop.js reads your dictionary array
-      ↓
-JS generates ‘book cards’ into a target <div id="book-list">
-      ↓
-CSS styles them visually
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bogshop | KommIT Union</title>
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="styling.css">
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="https://i.imgur.com/V1zzEfc.png" alt="KommIT Union Logo" class="logo-img">
+      <span>KommIT Union</span>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Hjem</a></li>
+        <li class="dropdown">
+          <a href="#">Begivenheder ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Fotos</a></li>
+            <li><a href="#">Begivenhedskalender</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="active">Ressourcer ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="BookShop.html" class="active">Bogshop</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Nyhedsbrev</a></li>
+        <li><a href="#">Partnere</a></li>
+        <li><a href="omOs.html">Om</a></li>
+      </ul>
+    </nav>
+    <div class="auth-buttons">
+      <button class="login">Log ind</button>
+      <button class="signup">Opret bruger</button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero bookshop-hero">
+    <h1>Bogshoppen</h1>
+    <p>Find eller sælg brugte studiebøger fra Kommunikation og IT‑studerende.</p>
+  </section>
+
+  <!-- Main Content -->
+  <main class="bookshop-content">
+
+    <!-- Search / Filter Bar -->
+    <section class="bookshop-controls">
+      <input type="text" id="search-bar" placeholder="Søg efter titel, forfatter eller emne">
+      <!-- optional sort dropdown -->
+      <!-- <select id="sort-menu">
+        <option value="default">Sorter efter</option>
+        <option value="price">Pris</option>
+        <option value="title">Titel</option>
+      </select> -->
+    </section>
+
+    <!-- Book List Area -->
+    <section id="book-list">
+      <!-- JavaScript will inject dynamic book cards here -->
+    </section>
+
+    <!-- Add Book Section (optional for future use) -->
+    <section class="add-book">
+      <button id="add-book-btn">Tilføj bog (kommende funktion)</button>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2024 KommIT Union – Bogshoppen</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="bookshop.js" defer></script>
+</body>
+</html>
