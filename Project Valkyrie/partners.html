@@ -7,105 +7,118 @@
   <link rel="stylesheet" href="styling.css">
 </head>
 <body>
-
-<header class="navbar">
-  <div class="logo">
-    <img src="https://i.imgur.com/V1zzEfc.png" class="logo-img">
-    <span>KommIT Union</span>
-  </div>
-
-  <nav>
-    <ul class="nav-links">
-      <li><a href="kommitUnion.html">Hjem</a></li>      
-      <li class="dropdown">
-        <a href="#">Begivenheder ▾</a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Fotos</a></li>
-          <li><a href="#">Begivenhedskalender</a></li>
-        </ul>
-      </li>
-
-      <li class="dropdown">
-        <a href="#">Ressourcer ▾</a>
-        <ul class="dropdown-menu">
-          <li><a href="BookShop.html">Bogshoppen</a></li>      
-        </ul>
-      </li>
-
-      <li><a href="#">Nyhedsbrev</a></li>
-      <li><a href="partnere.html" class="active">Partnere</a></li>
-      <li><a href="omOs.html">Om</a></li>
-    </ul>
-  </nav>
-
-  <div class="auth-buttons">
-    <button class="login">Log ind</button>
-    <button class="signup">Opret bruger</button>
-  </div>
-</header>
-
-<section class="partners">
-  <h1>Vores Partnere</h1>
-
-  <div class="cards-container">
-
-    <!-- CARD EXAMPLE — duplicate this 9 times -->
-    <div class="partner-card">
-          <img src="https://i.imgur.com/hdS7gWT.png" alt="Tjekdet logo" class="partner-logo">
-      <h2>Tjekdet</h2>
-      <p>TjekDet er hele Danmarks politisk uafhængige faktatjekmedie. Vi faktatjekker påstande i den offentlige debat og korrigerer eller nuancerer, hvor der er behov for det. Opgør med misinformation og desinformation har været TjekDets hovedfokus, siden mediet første gang så dagens lys i november 2016. Her kan du læse mere om os, få indblik i, hvordan vi arbejder, vores økonomiske grundlag, og hvem der står bag mediet.</p>
-      <a href="https://www.tjekdet.dk" target="_blank" class="read-more">Læs mere</a>
-        <div class="partner-card">
-             <img src="data:image/png;base64,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" alt="IDA logo" class="partner-logo">
-      <h2>IDA</h2>
-      <p>IDA er en fagforening med over 175.000 medlemmer, der er ingeniører, cand. scient'er og it-professionelle. Læs alt om organisationen, IDAs arbejde og holdninger og mød medarbejderne her.</p>
-      <a href="https://ida.dk" target="_blank" class="read-more">Læs mere</a>
-      <div class="partner-card">
-          <img src="https://www.zetland.dk/fav/zetland/touch-icon-180x180.png" alt="Zetland logo" class="partner-logo">
-  <h2>Zetland</h2>
-  <p>Zetland er et uafhængigt medie, der udgiver troværdig og kritisk journalistik på baggrund af en fair og gennemsigtig proces. Har vores medlemmer ikke tillid til dét, eroderer hele det fundament, Zetland står på. Derfor har alle, der arbejder på Zetland, en fælles interesse i at værne om Zetlands integritet og etik</p>
-  <a href="https://www.zetland.dk/om/omzetland" target="_blank" class="read-more">Læs mere</a>
-  <div class="partner-card">
-  <img src="https://i.imgur.com/h3zemIe.png" alt="Publico logo" class="partner-logo">
-  <h2>Publico</h2>
-  <p>Vi hjælper videnstærke organisationer med at vinde synlighed, sympati og salg.</p>
-  <a href="https://publico.dk/?_gl=1*k6q9bl*_up*MQ..*_gs*MQ..&gclid=Cj0KCQiAxJXJBhD_ARIsAH_JGjhtIhZFHw8iDnPptTDaW4Xq5AapBrvaDsLb1j8DJqaVvMdTKKsJArUaAhs2EALw_wcB&gbraid=0AAAAADPRKhuPFiVwFzNpbSZ5zymhw46y-" target="_blank" class="read-more">Læs mere</a>
-  <div class="partner-card">
- <img src="data:image/png;base64,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" alt="Novo Nordisk logo" class="partner-logo">
-  <h2>Novo Nordisk</h2>
-  <p>Vi er en global lægemiddelvirksomhed, der blev grundlagt i 1923 med hovedkontor lige uden for København. Vores formål er at drive forandring for at bekæmpe alvorlige kroniske sygdomme som svær overvægt og sjældne blodsygdomme og endokrine sygdomme.</p>
-  <a href="https://www.novonordisk.dk" target="_blank" class="read-more">Læs mere</a>
-  <div class="partner-card">
-  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATwAAACgCAMAAACmCCC4AAAAe1BMVEX///8AAAD19fX7+/tLS0vi4uIzMzNtbW2BgYE+Pj5hYWFdXV1mZmYrKyvOzs7c3NzBwcE4ODiUlJSKioq5ubkcHBzx8fETExMlJSWmpqZTU1OsrKzKysrp6el6enrV1dWbm5tERESPj49ycnJ9fX0fHx8LCwsVFRUuLi5OBC6eAAAH50lEQVR4nO2bC5eiOhZGEcX3AwEfgChqadX//4WDkJMHJEAJ5b0z8+21eq3uCCTZCclJQlsWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP7HGLbnny7qv44kGrWm8WHDfeK4BZck2Zds/00T2Alh9/zkZpxBe+qflITn0U6+/BGdbydRo9MoenHd9Ff4feDPxzy/8dIP9v09vAXOYXAYt+FZLy9Y6IWfxRUs5dJTyYfxXJNfFH5wdMnkTVpdeK2Td5mZeuufyQt3hhydfp7fhlzefdnA3LNmNfJik7o/k+dsTRkePixveDRXnrGok6e62734Y3muuaQfl7dqlDevkSfmnEUgZgPnFJ+PfyRPbq2rFwfrjCD2Z/+F8ibU5apa7CDmf+9P3okXK3LVXy7p9tNjXjd5CV3TEIM4YUHStcg8w91al80Hwz0hb+mZ8Gvl0fiz/FSR7yzDY+dm6IqQF1i2HsuuleexuoQfKvGFOt4H308DkrxLMVGWed7q5Z1ZXWL9z71DQ2z6ofxqUOTp8evl3T9bGT7i/Qv2KbrLu7HLrg052ZdNDq904ryW806+HN3E98VoNFpMXTGQbcJXWjT/cuXBjcKUr1bVszeBv5y/mHjuRvVtF/nTw53LJc4jAScv5iVPT1x/HmXlmnhrzbK5u7yQrgvq67Fml/FJeXvIw2k/+0laGD+nRSndkUjbTUW1J+1yy9l8iW2DF7ObPE66+TD1PX7ll3ijbPE+8F7prDBZuZz7Qdy8mlYmqO7yNvzCtHZPoyKPrWumfMphjLMaDpdq2pYCEJtW0c1TrX0eVLmJZmBhwnEvJr1UkRcc1Ht3paiyKu+0UQga5dmidY9nNzEORSZ5fmVlPLKskSatKC8lNLozLH8XPA4U8qg3K/K8U/Xm0qRYkbdPThL7TaM8K1VrOY3125ImefPq9kicVpLoNaV+fmxyZ1Pk/xyd0/C25E28KMuzbzwTWd65uOP5lEuhLo+q8nz54rCFvGGlm4zPoVPpgSZ539mf6LU8DSK6/+flc5GlncQ2IaszLfKapieLNvsmNMy5tP1xU+X9SD1MlvcsypVNHac7vyBqkCfaISNuIc9y1GGZObkHqj+TvMHgQcusQLr/Uk4r/knveNN6hgZwsTFh7SnDRJE3lvZU5Qkj08fHuORKacqKsA951vA+0PIlT25meaJAU36rWChPlKvovZCkaGFGVvIIQgvJVP3nq4s9oonv+9OTIu8k3XvU5duLvKyhS7MjMW0h7y49hmuv3lcMelS6JnnV52SwN2SsystqqYQJJE/ZYaeLZ3JiT/KylyK+6uyNedMb5UlvQqJLY0nF2rmlPLf6nIwvlpoo1wxKERbJUyNJmtbkvSODvHxIOf1GXn5DWhU4ppHPJG8sl51FcU8pyf6R5dFrq47cFShyVzcPaPwsxjKSV97RIHlqzEDi5eYwyJuzp/9O3otTyifNAp/9YJKnaGATtzyX7ldyHan+yutThQ2UR7VT0ahQ9CmSV96dZfJ26nxHGcuhXu/y8kLKAp+s9Y1xnnwnkyfPpfZWlsfftfoSsB481svz5Ud9l7e2mLytKq802+TUvbZvy8uQwkXWViZ5yug1kmtXMIxkeXwxWJ89mxpGqgC6WZF3LC8qF5pG1cY+JnnRZb2+pB3kSTMnm7WMyzP5pkZ5fHmm24IXDLTyHLZYLWKAP5PHe8378vjYzpal5o0BiUZ59BIP0tq86+X9Xc/79fLMBGU3K2rQjzyLAsr69dlKK6+P11aOHKvy1tLRz23TQd6QZfdTlK4neXz7sPawjk0YK/2EUaxuG+TN3pgwNurpz+l9eRbbj2BRRU/y+KBXu7pl/fOh7vppQxWTvKM+VJFD54q8o8rjfXl7ll2vY57YLhmUtyZlaHdTDUNc5c4GeaUgmUaz2iC5yrvyqKhs7dqXPLGDVPPi0uaLKpj2HZTlmVGeOp+zUfQpN4ckz7lqvwe9hk37eYZ0CpRZR+9LniUCcG3fy3cSqdfflZ/YSMjGkSZ5SsGoZynzlHzobSKplbffTl2dP2pmKlxv8sShidjp5Kzvhzw/FtF8y4Me9Vn2pCZ5yjEJtZgSlQp5q62Jcb28x6tB/Fh5ieyYb5B6VK2+5CkfSUXpmrfcJp7uaIal8V2aVuiw5bBvKW8rfuGnHEotu3/owzdoB8/tcuKl6XkSfYs7eT/vT175uG2wms1m/LiHhSdUqhHld6IUelCjvCwuyXu2HfCHq8NALu+nUd6yjTwdzft5b8ir+xSV5PEvCwbHeximYrO2cgBkkKfrUd/qtd2/Sa6VdxejYZ/yaj6rrYyxJcTCoUFeOqneXJrfM3ljf9qCh1Hes5oJI5K3ynqVlw1qV0OmE2qvJNL8Kj2lQd7NKh8tROWDdqd0Kl6HXp41DLzK4WPGIlWnwoo89l78bldFLrpXtTMJZRXr0sHUNZXDAibvYZCXlSGQ6zWvBkaOud+0lZfXMHFDz78v8k9q/FsaVM9tK/8DSPe/smrStNluYs+fvnJdTLNMNZ8rXIoLlr6fuuWzeMODhbys9waen3FLT9r8DV80ar9y/P9Algd+CeR1API6AHkdgLwOQF4HIK8DkNeBCPLeJ3ytKfxpm8/tAfgw/wEe85ETBg+f1AAAAABJRU5ErkJggg==" alt="Simcorp logo" class="partner-logo">
-  <h2>Simcorp</h2>
-  <p>Since our founding in Copenhagen, Denmark in 1971, SimCorp has continuously innovated to create an industry-leading integrated investment management platform that’s built to turn avalanches of information into insights that lead to the decisions that put our clients ahead of the competition.</p>
-  <a href="https://www.simcorp.com" target="_blank" class="read-more">Læs mere</a>
-  <div class="partner-card">
-  <img src="data:image/png;base64,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" alt="Jfm logo" class="partner-logo">
-  <h2>Jfm</h2>
-  <p>Vi understøtter demokrati og sammenhængskraft med rod i det lokale. Med vores mediekoncern vil vi fastholde og udvikle de regionale og lokale mediers afgørende rolle for demokrati og sammenhængskraft i lokalområderne. Det er vores mission. Og det, der driver os hver eneste dag.</p>
-  <a href="https://jfm.dk" target="_blank" class="read-more">Læs mere</a>
-  <div class="partner-card">
-  <img src="data:image/png;base64,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" alt="Center for Digital Pædagogik logo" class="partner-logo">
-  <h2>Center for Digital Pædagogik</h2>
-  <p>Hos os finder du ekspertise inden for digital rådgivning, børns digitale vaner og risikoadfærd, digital dannelse og trends og tendenser på sociale medier og i computerspil. Og vi deler med glæde den viden med dig!</p>
-  <a href="https://cfdp.dk" target="_blank" class="read-more">Læs mere</a>
-  <div class="partner-card">
-  <img src="data:image/jpeg;base64,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" alt="best one logo" class="partner-logo">
-  <h2>best one</h2>
-  <p>Når du er kunde hos os, spiller vi på samme hold. Jo bedre vi kender din forretning – desto bedre markedsføring har vi mulighed for at lave. Vi spiller hinanden bedre, og jagter i et unikt samarbejde vores fælles succes.</p>
-  <a href="https://best-one.dk" target="_blank" class="read-more">Læs mere</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="https://i.imgur.com/V1zzEfc.png" alt="KommIT Union Logo" class="logo-img">
+      <span>KommIT Union</span>
     </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="kommitUnion.html">Hjem</a></li>
+        <li class="dropdown">
+          <a href="#">Begivenheder ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="fotoGalleri.html">Fotos</a></li>
+            <li><a href="#">Begivenhedskalender</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">Ressourcer ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="BookShop.html">Bogshoppen</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Nyhedsbrev</a></li>
+        <li><a href="partnere.html" class="active">Partnere</a></li>
+        <li><a href="omOs.html">Om</a></li>
+      </ul>
+    </nav>
+    <div class="auth-buttons">
+      <button class="login">Log ind</button>
+      <button class="signup">Opret bruger</button>
+    </div>
+  </header>
 
-  </div>
-</section>
+  <!-- Main Content -->
+  <section class="partners">
+    <h1>Vores Partnere</h1>
 
+    <div class="cards-container">
+
+      <!-- Tjekdet -->
+      <div class="partner-card">
+        <img src="https://i.imgur.com/hdS7gWT.png" alt="Tjekdet logo" class="partner-logo">
+        <h2>Tjekdet</h2>
+        <p>TjekDet er hele Danmarks politisk uafhængige faktatjekmedie. ...</p>
+        <a href="https://www.tjekdet.dk" target="_blank" class="read-more">Læs mere</a>
+      </div>
+
+      <!-- IDA -->
+      <div class="partner-card">
+        <img src="data:image/png;base64,iVBOR..." alt="IDA logo" class="partner-logo">
+        <h2>IDA</h2>
+        <p>IDA er en fagforening med over 175.000 medlemmer...</p>
+        <a href="https://ida.dk" target="_blank" class="read-more">Læs mere</a>
+      </div>
+
+      <!-- Zetland -->
+      <div class="partner-card">
+        <img src="https://www.zetland.dk/fav/zetland/touch-icon-180x180.png" alt="Zetland logo" class="partner-logo">
+        <h2>Zetland</h2>
+        <p>Zetland er et uafhængigt medie...</p>
+        <a href="https://www.zetland.dk/om/omzetland" target="_blank" class="read-more">Læs mere</a>
+      </div>
+
+      <!-- Publico -->
+      <div class="partner-card">
+        <img src="https://i.imgur.com/h3zemIe.png" alt="Publico logo" class="partner-logo">
+        <h2>Publico</h2>
+        <p>Vi hjælper videnstærke organisationer...</p>
+        <a href="https://publico.dk" target="_blank" class="read-more">Læs mere</a>
+      </div>
+
+      <!-- Novo Nordisk -->
+      <div class="partner-card">
+        <img src="data:image/png;base64,iVBOR..." alt="Novo Nordisk logo" class="partner-logo">
+        <h2>Novo Nordisk</h2>
+        <p>Vi er en global lægemiddelvirksomhed...</p>
+        <a href="https://www.novonordisk.dk" target="_blank" class="read-more">Læs mere</a>
+      </div>
+
+      <!-- Simcorp -->
+      <div class="partner-card">
+        <img src="data:image/png;base64,iVBOR..." alt="Simcorp logo" class="partner-logo">
+        <h2>Simcorp</h2>
+        <p>Since our founding in Copenhagen...</p>
+        <a href="https://www.simcorp.com" target="_blank" class="read-more">Læs mere</a>
+      </div>
+
+      <!-- Jfm -->
+      <div class="partner-card">
+        <img src="data:image/png;base64,iVBOR..." alt="Jfm logo" class="partner-logo">
+        <h2>Jfm</h2>
+        <p>Vi understøtter demokrati og sammenhængskraft...</p>
+        <a href="https://jfm.dk" target="_blank" class="read-more">Læs mere</a>
+      </div>
+
+      <!-- Center for Digital Pædagogik -->
+      <div class="partner-card">
+        <img src="data:image/png;base64,iVBOR..." alt="Center for Digital Pædagogik logo" class="partner-logo">
+        <h2>Center for Digital Pædagogik</h2>
+        <p>Hos os finder du ekspertise inden for digital rådgivning...</p>
+        <a href="https://cfdp.dk" target="_blank" class="read-more">Læs mere</a>
+      </div>
+
+      <!-- best one -->
+      <div class="partner-card">
+        <img src="data:image/jpeg;base64,/9j/4AAQSk..." alt="best one logo" class="partner-logo">
+        <h2>Best One</h2>
+        <p>Når du er kunde hos os, spiller vi på samme hold...</p>
+        <a href="https://best-one.dk" target="_blank" class="read-more">Læs mere</a>
+      </div>
+
+    </div>
+  </section>
 </body>
 </html>
