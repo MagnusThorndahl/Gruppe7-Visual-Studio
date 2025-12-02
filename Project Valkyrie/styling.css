@@ -4,21 +4,18 @@
 html {
   scroll-behavior: smooth;
 }
-
 body {
   margin: 0;
   font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
   background-color: #d6f1f4;
   color: #1a1a40;
 }
-
 /* Ens marigner og afstande for sidens layout */
 main {
   max-width: 1000px;
   margin: 0 auto;
   padding: 40px 20px;
 }
-
 /* == Navigations bar == */
 .navbar {
   display: flex;
@@ -32,7 +29,6 @@ main {
   top: 0;
   z-index: 100;
 }
-
 /* == Logo == */
 .logo {
   display: flex;
@@ -53,7 +49,6 @@ main {
   width: auto;
   object-fit: contain;
 }
-
 /* == Navigations bar links == */
 .nav-links {
   display: flex;
@@ -77,14 +72,12 @@ main {
 .nav-links > li > a:hover {
   color: #0056b3;
 }
-
 /* Styrer CSS af nedenstående link */
 .nav-links a.active {
   color: #A7372B;
   font-weight: 600;
   border-bottom: 2px solid #A7372B;
 }
-
 /* == Dropwdown menu == */
 .dropdown-menu {
   display: none;
@@ -112,7 +105,6 @@ main {
 .dropdown-menu li a:hover {
   background-color: #f2f2f2;
 }
-
 /* == Auth button login / signup == */
 .auth-buttons {
   display: flex;
@@ -141,7 +133,6 @@ main {
 .signup:hover {
   background-color: #c4006a;
 }
-
 /* =========================
    == Hero sektion style ==
    ========================= */
@@ -151,7 +142,6 @@ main {
   background: #d6f1f4;
   color: #1a1a40;
 }
-
 /* Message bars (hovedside) */
 .message-bar {
   background-color: #e1f6f9;
@@ -164,7 +154,6 @@ main {
   font-weight: 500;
   font-size: 1.1em;
 }
-
 /* Indhold i hero sektion */
 .hero-indhold {
   margin-top: 50px;
@@ -190,13 +179,11 @@ main {
   margin-top: 25px;
   line-height: 1.6;
 }
-
 /* == Om os hero sektion == */
 .omOS-hero {
   background-color: #edf9fa;
   padding: 100px 20px;
 }
-
 /* ====================
    == Om os side ==
    ==================== */
@@ -205,16 +192,13 @@ main {
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
-
 .omOs-sektion {
   margin-bottom: 40px;
 }
-
 .omOs-sektion h2 {
   color: #1a1a40;
   margin-bottom: 10px;
 }
-
 .omOs-sektion ul {
   list-style: none;
   padding: 0;
@@ -224,7 +208,6 @@ main {
   margin-bottom: 8px;
   font-size: 1.05em;
 }
-
 .contact a {
   color: #A7372B;
   text-decoration: none;
@@ -232,7 +215,6 @@ main {
 .contact a:hover {
   text-decoration: underline;
 }
-
 /* =========================
    == Bogshop søgebar ==
    ========================= */
@@ -241,7 +223,6 @@ main {
   justify-content: center;
   padding: 1rem 0;
 }
-
 #search-bar {
   width: 100%;
   max-width: 450px;
@@ -253,21 +234,17 @@ main {
   outline: none;
   transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
 }
-
 #search-bar::placeholder {
   color: #999;
 }
-
 #search-bar:hover {
   border-color: #b5b5b5;
 }
-
 #search-bar:focus {
   border-color: #A7372B;
   box-shadow: 0 0 0 3px rgba(167, 55, 43, 0.18);
   transform: translateY(-1px);
 }
-
 /* =====================
    == Tilføj bog button ==
    ===================== */
@@ -275,65 +252,73 @@ main {
   margin-top: 5px;
   text-align: center;
 }
-
 #add-book-btn {
   padding: 12px 26px;
   font-size: 1rem;
   font-weight: 600;
   border: none;
-  border-radius: 999px;           /* rund "pill" stil */
-  background-color: #A7372B;      /* samme røde som din signup-knap */
+  border-radius: 999px;
+  background-color: #A7372B;
   color: #ffffff;
   cursor: pointer;
   transition: background-color 0.2s ease,
               transform 0.1s ease,
               box-shadow 0.2s ease;
 }
-
 #add-book-btn:hover {
   background-color: #8b2d23;
   transform: translateY(-2px);
   box-shadow: 0 6px 14px rgba(0,0,0,0.15);
 }
-
 #add-book-btn:active {
   transform: translateY(0);
   box-shadow: 0 3px 6px rgba(0,0,0,0.1);
 }
-/* == Foto galleri grid== */
+
+/* =========================
+   == Foto galleri (fixed) ==
+   ========================= */
 .photo-gallery {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-  padding: 40px 20px;
+  overflow: hidden;
 }
-
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* responsive grid */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  width: 100%;
 }
-
 .gallery-grid img {
   width: 100%;
-  height: 100%;
+  height: auto;
+  display: block;
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease;
 }
-
 .gallery-grid img:hover {
   transform: scale(1.05);
 }
 
-
+/* =========================
+   == Partners (unchanged) ==
+   ========================= */
 .partners {
   padding: 80px 8%;
   background: #f5f7fa;
   min-height: 100vh;
 }
-
 /* Titel */
 .partners h1 {
   text-align: center;
@@ -342,7 +327,6 @@ main {
   margin-bottom: 50px;
   color: #1a1a1a;
 }
-
 /* GRID – matcher fotoGalleri */
 .cards-container {
   display: grid;
@@ -350,7 +334,6 @@ main {
   gap: 25px; 
   padding: 10px;
 }
-
 /* Card */
 .partner-card {
   background: white;
@@ -361,14 +344,10 @@ main {
   transition: 0.25s ease;
   text-align: center;
 }
-
-/* Hover-effekt */
 .partner-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 28px rgba(0,0,0,0.12);
 }
-
-/* Logo */
 .partner-logo {
   width: 100%;
   max-width: 150px;
@@ -376,24 +355,18 @@ main {
   object-fit: contain;
   margin: 0 auto 15px;
 }
-
-/* Virksomhedsnavn */
 .partner-card h2 {
   font-size: 1.2rem;
   font-weight: 700;
   color: #222;
   margin-bottom: 10px;
 }
-
-/* Beskrivelse */
 .partner-card p {
   font-size: 0.95rem;
   color: #555;
   line-height: 1.4;
   margin-bottom: 20px;
 }
-
-/* Læs mere-knap */
 .read-more {
   display: inline-block;
   padding: 10px 16px;
@@ -403,19 +376,20 @@ main {
   border-radius: 8px;
   font-weight: 600;
 }
-
 .read-more:hover {
   background: #004ecc;
 }
+
+/* =========================
+   == Bogshop grid ==
+   ========================= */
 .book-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* responsiv */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 24px;
   margin-top: 40px;
   padding: 0 10px;
 }
-
-/* Hvert kort (bogkort) */
 .book-card {
   background-color: #ffffff;
   border: 1px solid #ddd;
@@ -428,30 +402,22 @@ main {
   justify-content: space-between;
   font-family: 'Poppins', sans-serif;
 }
-
-/* Hover-effekt */
 .book-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
-
-/* Titel */
 .book-card h3 {
   font-size: 1.15rem;
   margin-bottom: 8px;
   color: #1a1a40;
   font-weight: 600;
 }
-
-/* Info tekst */
 .book-card p {
   margin: 4px 0;
   font-size: 0.95rem;
   line-height: 1.4;
   color: #333;
 }
-
-/* Pris kan fremhæves lidt */
 .book-card p strong {
   color: #A7372B;
 }
