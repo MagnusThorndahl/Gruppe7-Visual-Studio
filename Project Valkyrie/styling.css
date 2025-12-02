@@ -1,5 +1,5 @@
 /* ==============================
-   ==== GLOBAL / BASE STYLING ====
+   == GLOBAL ==
    ============================== */
 html {
   scroll-behavior: smooth;
@@ -234,7 +234,7 @@ main {
 }
 
 /* =========================
-   ==== BOOKSHOP SEARCH BAR ====
+   == Bogshop søgebar ==
    ========================= */
 .bookshop-controls {
   display: flex;
@@ -269,7 +269,7 @@ main {
 }
 
 /* =====================
-   ==== ADD BOOK BUTTON ====
+   == Tilføj bog button ==
    ===================== */
 .add-book {
   margin-top: 5px;
@@ -300,7 +300,7 @@ main {
   transform: translateY(0);
   box-shadow: 0 3px 6px rgba(0,0,0,0.1);
 }
-/* ==== PHOTO GALLERY GRID ==== */
+/* == Foto galleri grid== */
 .photo-gallery {
   background-color: #ffffff;
   border-radius: 12px;
@@ -408,32 +408,4 @@ main {
 
 .read-more:hover {
   background: #004ecc;
-}
-
-/* ======================
-   ==== RESPONSIVE DESIGN ====
-   ====================== */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    height: auto;
-    padding: 15px 20px;
-  }
-
-  .nav-links {
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 10px;
-  }
-
-  .auth-buttons {
-    margin-top: 10px;
-  }
-
-  .dropdown-menu {
-    position: static;
-    box-shadow: none;
-  }
-
 }
