@@ -409,7 +409,6 @@ main {
 .read-more:hover {
   background: #004ecc;
 }
-
 .book-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* responsiv */
