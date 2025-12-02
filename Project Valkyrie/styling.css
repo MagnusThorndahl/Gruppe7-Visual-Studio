@@ -12,16 +12,14 @@ body {
   color: #1a1a40;
 }
 
-/* Provide consistent layout margins for page content */
+/* Ens marigner og afstande for sidens layout */
 main {
   max-width: 1000px;
   margin: 0 auto;
   padding: 40px 20px;
 }
 
-/* =====================
-   ==== NAVIGATION BAR ====
-   ===================== */
+/* Navigations bar */
 .navbar {
   display: flex;
   align-items: center;
@@ -35,7 +33,7 @@ main {
   z-index: 100;
 }
 
-/* ==== LOGO ==== */
+/* Logo */
 .logo {
   display: flex;
   align-items: center;
