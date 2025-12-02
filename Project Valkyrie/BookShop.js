@@ -1,15 +1,15 @@
 // bookshop.js
 console.log("Indlæste bøger:", books);
 
-// Når hele siden er klar
+// 
 document.addEventListener("DOMContentLoaded", () => {
   const searchBar = document.getElementById("search-bar");
   const bookList = document.getElementById("book-list");
 
-  // 1️⃣ Vis alle bøger på siden
+  // Viser alle bøger på siden
   displayBooks(books);
 
-  // 2️⃣ Tilføj søgefunktion
+  // søgefunktion
   searchBar.addEventListener("input", () => {
     const searchTerm = searchBar.value.toLowerCase();
 
@@ -24,10 +24,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Funktion til at vise bøgerne i HTML
+// Funktion til at vise bøgerne i html
 function displayBooks(bookList) {
   const container = document.getElementById("book-list");
-  container.innerHTML = ""; // ryd før ny visning
+  container.innerHTML = ""; 
 
   if (bookList.length === 0) {
     container.innerHTML = "<p>Ingen bøger matcher din søgning.</p>";
