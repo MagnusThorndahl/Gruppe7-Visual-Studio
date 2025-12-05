@@ -43,12 +43,6 @@ function displayBooks(bookList) {
 
       <h3>${book.title}</h3>
       <p><strong>Forfatter:</strong> ${book.forfatter}</p>
-      <p><strong>Pris:</strong> ${book.pris} kr.</p>
-      <p><strong>Stand:</strong> ${book.stand}</p>
-      <p><strong>Sprog:</strong> ${book.sprog}</p>
-      <p><strong>Udgivelsesår:</strong> ${book.årstal}</p>
-      <p><strong>ISBN:</strong> ${book.isbnnr}</p>
-      <p><strong>Bruger:</strong> ${book.user}</p>
     `;
 
     container.appendChild(card);
