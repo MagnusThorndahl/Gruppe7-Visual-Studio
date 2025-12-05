@@ -1,6 +1,6 @@
 // Format = user/title/stand/pris/årstal/isbnnr/sprog/format/forfatter //
 let books = [
-  { user: "August", title: "Medier og Samfund", stand: "Ubrugt", pris: 100, årstal: 2008, isbnnr: "9788759313534", sprog: "Dansk", format: "Paperback", forfatter: "Bruhn Jensen, Klaus" },
+  { user: "August", title: "Medier og Samfund", stand: "Ubrugt", pris: 100, årstal: 2008, isbnnr: "9788759313534", sprog: "Dansk", format: "Paperback", forfatter: "Bruhn Jensen, Klaus", image: "img/medier_og_samfund.jpg" },
   { user: "Mathias", title: "Javascript Absolute Beginner's Guide", stand: "Som ny", pris: 125, årstal: 2023, isbnnr: "9780137959167", sprog: "Engelsk", format: "Paperback", forfatter: "Chinnathambi, Kirupa" },
   { user: "Magnus", title: "HTML & CSS", stand: "Lettere brugt", pris: 110, årstal: 2011, isbnnr: "9781118008188", sprog: "Engelsk", format: "Paperback", forfatter: "Duckett, Jon" },
   { user: "Emil", title: "Social Research", stand: "Ubrugt", pris: 150, årstal: 2016, isbnnr: "9780745671857", sprog: "Engelsk", format: "Paperback", forfatter: "Blaikie, Norman & Priest, Jan" },
