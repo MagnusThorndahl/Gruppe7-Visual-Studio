@@ -38,7 +38,9 @@ function displayBooks(bookList) {
     const card = document.createElement("div");
     card.classList.add("book-card");
 
-    card.innerHTML = `
+    card.innerHTML = `'
+    <img src="${imageSrc}" alt="${book.title}" class="book-cover">
+
       <h3>${book.title}</h3>
       <p><strong>Forfatter:</strong> ${book.forfatter}</p>
       <p><strong>Pris:</strong> ${book.pris} kr.</p>
