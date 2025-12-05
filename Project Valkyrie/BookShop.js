@@ -1,3 +1,4 @@
+/*
 // bookshop.js
 console.log("Indlæste bøger:", books);
 
@@ -53,4 +54,27 @@ function displayBooks(bookList) {
 
     container.appendChild(card);
   });
+}
+*/
+
+// bookshop.js //
+class Book {
+constructor (user, title, stand, pris, årstal, isbnnr, sprog, format, forfatter, image) {
+  this.user = user;
+  this.title = title;
+  this.stand = stand;
+  this.pris = pris;
+  this.årstal = årstal;
+  this.isbnnr = isbnnr;
+  this.sprog = sprog;
+  this.format = format;
+  this.forfatter = forfatter;
+  this.image = image;
+}
+// eksempel metode til at vise boginfo //
+visBogInformation() {
+  console.log(
+    '"$(this.title)" af $(this.forfatter), udgivet i $(this.årstal), med en pris på: $(this.pris) kr.'
+  );
+}
 }
