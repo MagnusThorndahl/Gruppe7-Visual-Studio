@@ -399,3 +399,14 @@ main {
 .book-card p strong {
 	color: #A7372B;
 }
+/*============================== Bogshop Sektion ======================*/
+.bookshop-content {
+	padding: 60px 8%;
+	background: #f8f8fb;
+	min-height: 100vh;
+}
+
+.book-grid {
+	display: grid;
+	grid-template-columns: repeat(auto );
+}
