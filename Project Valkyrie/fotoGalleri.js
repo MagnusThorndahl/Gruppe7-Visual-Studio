@@ -1,38 +1,25 @@
-let galleryGrid = document.querySelector('.gallery-grid');
-let API_KEY = 'qT0vXrdjtj1XR6qkq5DtIeruJL8o3GuGeinzROqNUlFCTR81tE4r425v';  
-let COLLECTION_ID = 'kriwv7u';        
-let PAGE = 1;
-let PER_PAGE = 15;
+// vi definerer her som det første variablerne vi bruger i vores query til Pexels API'et blandt andet api nøgle, id på kollektion osv. //
+let galleri = document.querySelector('.gallery-grid');
+let API_NØGLE = 'qT0vXrdjtj1XR6qkq5DtIeruJL8o3GuGeinzROqNUlFCTR81tE4r425v';
+let kollektionsId ='kriwv7u';
+let sideAntal = 15; 
 
-async function loadPhotos(page = 1) {
-  try {
-    let response = await fetch(
-      `https://api.pexels.com/v1/collections/${COLLECTION_ID}?type=photos&per_page=${PER_PAGE}&page=${page}`,
-      {
-        headers: { Authorization: API_KEY }
-      }
-    );
+// funktionen der henter fotos fra Pexels API'et og viser dem i galleriet i vores html fotogalleri.html //
+     async function loadFotos(sidenummer = 1) {    
+let URL = `https://api.pexels.com/v1/collections/${kollektionsId}?type=photos&per_page=${sideAntal}&page=${sidenummer}`;  
+let svar = await fetch(URL, { headers: { Authorization: API_NØGLE } });
+let data = await svar.json();
+let photos = data.media.filter(item => item.type === 'Photo');
 
-    if (!response.ok) throw new Error(`Fejl ${response.status}`);
+    galleri.innerHTML = ''; 
 
-    let data = await response.json();
-    galleryGrid.innerHTML = '';
+    // Looper igennem de fotos vi modtager igennem API'et og opretter et img element for hvert foto //
+    for (let Photo of photos) {
+      let image = document.createElement('img')
+      image.src = Photo.src.medium;
+      galleri.appendChild(image);
+    }
 
-    let photos = data.media.filter(item => item.type === 'Photo');
-
-    photos.forEach(photo => {
-      let img = document.createElement('img');
-      img.src = photo.src.medium;
-      img.alt = photo.alt || 'Pexels‑billede';
-      img.loading = 'lazy';
-      galleryGrid.appendChild(img);
-    });
-
-  } catch (error) {
-    console.error('Kunne ikke indlæse billeder:', error);
-    galleryGrid.innerHTML =
-      '<p>Der opstod en fejl ved indlæsning af fotogalleriet.</p>';
   }
-}
 
-loadPhotos();
+loadFotos();
