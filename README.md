@@ -1,3 +1,3 @@
 # Gruppe7-Visual-Studio
 Gruppe7 Visual Studio
-api key: qT0vXrdjtj1XR6qkq5DtIeruJL8o3GuGeinzROqNUlFCTR81tE4r425v
+api key pexels: qT0vXrdjtj1XR6qkq5DtIeruJL8o3GuGeinzROqNUlFCTR81tE4r425v
