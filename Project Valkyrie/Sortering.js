@@ -4,3 +4,4 @@ Sprog = document.getElementById("sprogfilter")
 Pris = document.getElementById("prisfilter")
 Stand = document.getElementById("standfilter")
 Bogliste = document.getElementById("book-list")
+
