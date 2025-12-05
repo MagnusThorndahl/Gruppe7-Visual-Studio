@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
       book.forfatter.toLowerCase().includes(searchTerm) ||
       book.user.toLowerCase().includes(searchTerm)
     );
-
+    
     displayBooks(filteredBooks);
   });
 });
