@@ -39,7 +39,9 @@ function displayBooks(bookList) {
     card.classList.add("book-card");
 
     card.innerHTML = `
-    <img src="${book}" alt="${book.title}" class="book-cover">
+ <img src="${book.image || 'https://via.placeholder.com/150x220?text=Ingen+forside'}" 
+           alt="${book.title}" 
+           class="book-cover">
 
         <h3>${book.title}</h3>
       <p><strong>Forfatter:</strong> ${book.forfatter}</p>
