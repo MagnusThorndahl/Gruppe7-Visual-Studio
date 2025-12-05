@@ -10,6 +10,6 @@ let books = [
   { user: "Adam", title: "Kommunikation", stand: "Lettere brugt", pris: 75, årstal: 2022, isbnnr: "9788759339510", sprog: "Dansk", format: "Paperback", forfatter: "Løw, Ole", image: "https://i.imgur.com/Bj4SL0E.jpg" }, 
   { user: "Rebekka", title: "Offentlig kommunikation", stand: "Som ny", pris: 150, årstal: 2023, isbnnr: "9788759341940", sprog: "Dansk", format: "Paperback", forfatter: "Almund, Pernille", image: "https://i.imgur.com/9rpRYN5.jpg" },
   { user: "Leo", title: "Kommunikation i Praksis", stand: "Som ny", pris: 250, årstal: 2020, isbnnr: "9788759332894", sprog: "Dansk", forfatter: "Andersen, Heidi", image: "https://i.imgur.com/gFqE4Ov.jpg" },
-  { user: "Peter", title: "Corporate Communication", stand, "brugt", pris: 80, årstal: 2010, isbnnr: "9781433106217", sprog: "Engelsk", forfatter: "Bookman, Michael B.", image: "https://i.imgur.com/OsntShI.jpg" },
+  { user: "Peter", title: "Corporate Communication", stand: "brugt", pris: 80, årstal: 2010, isbnnr: "9781433106217", sprog: "Engelsk", forfatter: "Bookman, Michael B.", image: "https://i.imgur.com/OsntShI.jpg" },
   { user: "Jon", title: "Marketing Communications", stand: "Som ny", pris: 400, årstal: 2025, isbnnr: "9781292737225", sprog: "Engelsk", forfatter: "De Pelsmacker, Patick", image: "https://i.imgur.com/tlNpMsA.jpg" },
 ];
