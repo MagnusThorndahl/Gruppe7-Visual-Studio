@@ -6,5 +6,9 @@ let books = [
   { user: "Emil", title: "Social Research", stand: "Ubrugt", pris: 150, årstal: 2016, isbnnr: "9780745671857", sprog: "Engelsk", format: "Paperback", forfatter: "Blaikie, Norman & Priest, Jan", image: "https://i.imgur.com/7GGju3L.jpg" },
   { user: "Freja", title: "Adventure in Statistics", stand: "Lettere brugt", pris: 130, årstal: 2015, isbnnr: "9781609185994", sprog: "Engelsk", format: "Paperback", forfatter: "Peng, Andy & Ingersoll, Jeremy", image: "https://i.imgur.com/PnJ2e3V.jpg" },
   { user: "Thea", title: "Theory and Reality", stand: "Som ny", pris: 140, årstal: 2010, isbnnr: "9780226480782", sprog: "Engelsk", format: "Paperback", forfatter: "Godfrey‑Smith, Peter", image: "https://i.imgur.com/NISwz2v.jpg" },
-  { user: "Sofie", title: "Data Science for Dummies", stand: "Ubrugt", pris: 120, årstal: 2021, isbnnr: "9781119646135", sprog: "Engelsk", format: "Paperback", forfatter: "Mueller, Lillian Pierson", image: "https://i.imgur.com/OJEbVTH.jpg"}
+  { user: "Sofie", title: "Data Science for Dummies", stand: "Ubrugt", pris: 120, årstal: 2021, isbnnr: "9781119646135", sprog: "Engelsk", format: "Paperback", forfatter: "Mueller, Lillian Pierson", image: "https://i.imgur.com/OJEbVTH.jpg"},
+  { user: "Adam", title: "Kommunikation", stand: "Lettere brugt", pris: 75, årstal: 2022, isbnnr: "9788759339510", sprog: "Dansk", format: "Paperback", forfatter: "Løw, Ole", image: "https://i.imgur.com/Bj4SL0E.jpg" }, 
+  { user: "Rebekka", title: "Offentlig kommunikation", stand: "Som ny", pris: 150, årstal: 2023, isbnnr: "9788759341940", sprog: "Dansk", format: "Paperback", forfatter: "Almund, Pernille", image: "https://i.imgur.com/9rpRYN5.jpg" },
+  { user: !"Leo", title: "Kommunikation i Praksis", stand: "ubrugt", pris: 250, årstal: 2020, isbnnr: "9788759332894", sprog: "Dansk", forfatter: "Andersen, Heidi", image: "https://i.imgur.com/gFqE4Ov.jpg" },
+
 ];
