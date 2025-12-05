@@ -2,7 +2,7 @@
 let galleri = document.querySelector('.gallery-grid');
 let API_NØGLE = 'qT0vXrdjtj1XR6qkq5DtIeruJL8o3GuGeinzROqNUlFCTR81tE4r425v';
 let kollektionsId ='kriwv7u';
-let sideAntal = 15; 
+let sideAntal = 25; 
 
 // funktionen der henter fotos fra Pexels API'et og viser dem i galleriet i vores html fotogalleri.html //
      async function loadFotos(sidenummer = 1) {    
