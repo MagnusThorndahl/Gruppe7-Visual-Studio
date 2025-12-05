@@ -41,7 +41,7 @@ function displayBooks(bookList) {
     card.innerHTML = `
     <img src="${book}" alt="${book.title}" class="book-cover">
 
-      <h3>${book.title}</h3>
+        <h3>${book.title}</h3>
       <p><strong>Forfatter:</strong> ${book.forfatter}</p>
       <p><strong>Pris:</strong> ${book.pris} kr.</p>
       <p><strong>Stand:</strong> ${book.stand}</p>
