@@ -130,3 +130,402 @@ main {
   color: #1a1a40;
 }
 .login:hover {
+  color: #0056b3;
+}
+.signup {
+  background-color: #A7372B;
+  color: white;
+}
+.signup:hover {
+  background-color: #c4006a;
+}
+
+/* =========================== Hero sektion style =========================== */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: #d6f1f4;
+  color: #1a1a40;
+}
+/* Message bars (hovedside) */
+.message-bar {
+  background-color: #e1f6f9;
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 30px;
+  border-radius: 50px;
+  color: #002b5b;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-weight: 500;
+  font-size: 1.1em;
+}
+/* Indhold i hero sektion */
+.hero-indhold {
+  margin-top: 50px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero-indhold h1 {
+  color: #1a1a40;
+  font-size: 2.6em;
+  margin-bottom: 10px;
+}
+.hero-indhold h2 {
+  color: #333;
+  font-size: 1.2em;
+  font-weight: 400;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+.hero-indhold p {
+  color: #333;
+  font-size: 1.1em;
+  margin-top: 25px;
+  line-height: 1.6;
+}
+
+/* == Om os hero sektion == */
+.omOS-hero {
+  background-color: #edf9fa;
+  padding: 100px 20px;
+}
+
+/* ====================== Om os side ====================== */
+.omOs-indhold {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  padding: 40px;
+}
+.omOs-sektion {
+  margin-bottom: 40px;
+}
+.omOs-sektion h2 {
+  color: #1a1a40;
+  margin-bottom: 10px;
+}
+.omOs-sektion ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.omOs-sektion ul li {
+  margin-bottom: 8px;
+  font-size: 1.05em;
+}
+.contact a {
+  color: #A7372B;
+  text-decoration: none;
+}
+.contact a:hover {
+  text-decoration: underline;
+}
+
+/* =========================== Partners =========================== */
+.partners {
+  padding: 80px 8%;
+  background: #f5f7fa;
+  min-height: 100vh;
+}
+.partners h1 {
+  text-align: center;
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+  color: #1a1a1a;
+}
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 10px;
+}
+.partner-card {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  border: 1px solid #e6e6e6;
+  transition: 0.25s ease;
+  text-align: center;
+}
+.partner-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+.partner-logo {
+  width: 100%;
+  max-width: 150px;
+  max-height: 80px;
+  object-fit: contain;
+  margin: 0 auto 15px;
+}
+.partner-card h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 10px;
+}
+.partner-card p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+.read-more {
+  display: inline-block;
+  padding: 10px 16px;
+  background: #0066ff;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+.read-more:hover {
+  background: #004ecc;
+}
+
+/* =========================== Foto galleri =========================== */
+.photo-gallery {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  width: 100%;
+}
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* =========================== Bogshop Sektion =========================== */
+.bookshop-content {
+  padding: 60px 8%;
+  background: #f8f8fb;
+  min-height: 100vh;
+}
+
+/* Container til søgefelt og filtre */
+.bookshop-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; 
+  gap: 15px;      
+  padding: 1rem 0;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Fælles styling for både søgefelt og drop-down menuer */
+#search-bar,
+.bookshop-controls select {
+  padding: 0.75rem 1.2rem;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 999px; /* "Pill" shape */
+  background-color: #ffffff;
+  color: #1a1a40;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+  cursor: pointer;
+}
+
+/* Specifikt for søgefeltet */
+#search-bar {
+  flex-grow: 2;
+  min-width: 250px;
+  cursor: text;
+}
+
+/* Specifikt for select-menuerne */
+.bookshop-controls select {
+  flex-grow: 1;
+  min-width: 140px; 
+  appearance: none; 
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%231a1a40%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 0.65em auto;
+  padding-right: 2.5rem; 
+}
+
+#search-bar::placeholder {
+  color: #999;
+}
+
+#search-bar:hover,
+.bookshop-controls select:hover {
+  border-color: #b5b5b5;
+}
+
+#search-bar:focus,
+.bookshop-controls select:focus {
+  border-color: #A7372B;
+  box-shadow: 0 0 0 3px rgba(167, 55, 43, 0.18);
+  transform: translateY(-1px);
+}
+
+/* Knappen "Tilføj Bog" */
+.add-book {
+  margin-top: 10px;
+  text-align: center;
+}
+#add-book-btn {
+  padding: 12px 26px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 999px;
+  background-color: #A7372B;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s ease,transform 0.1s ease,box-shadow 0.2s ease;
+}
+#add-book-btn:hover {
+  background-color: #8b2d23;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+#add-book-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+/* Grid og Cards til Bøger */
+.book-grid {
+  display: grid;
+  /* ÆNDRET FRA auto-fit TIL auto-fill for at forhindre kortene i at strække sig */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+  padding: 0 10px;
+}
+
+.book-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 18px 20px;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  height: 100%; /* Sikrer at kortene følger gridets højde */
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+.book-cover {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+.book-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1a1a40;
+  margin-bottom: 8px;
+}
+.book-card p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #333;
+  margin: 4px 0;
+}
+.book-card p strong {
+  color: #A7372B;
+}
+.book-card .read-more {
+  display: inline-block;
+  margin-top: auto; /* Skubber knappen ned i bunden hvis kortene har forskellig højde */
+  padding: 8px 14px;
+  background: #0066ff;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+.book-card .read-more:hover {
+  background: #004ecc;
+}
+
+/* =========================== Opgave Banken =========================== */
+.content-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+.semester-section {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  padding: 30px;
+  margin-bottom: 30px;
+}
+.semester-section h3 {
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+  color: #1a1a40;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.opgave-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.opgave-list li {
+  margin-bottom: 12px;
+}
+.opgave-list li a {
+  display: block;
+  background: #f9f9f9;
+  padding: 15px 20px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  text-decoration: none;
+  color: #1a1a40;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+.opgave-list li a:hover {
+  background-color: #ffffff;
+  border-color: #0056b3;
+  color: #0056b3;
+  transform: translateX(5px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
