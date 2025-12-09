@@ -93,7 +93,7 @@ main {
   border-bottom: 2px solid #A7372B;
 }
 
-/* == Dropdown menu == */
+/* Dropdown menuer  */
 .dropdown-menu {
   display: none;
   position: absolute;
@@ -151,7 +151,7 @@ main {
   background-color: #c4006a;
 }
 
-/* =========================== Hero sektion style =========================== */
+/* Hero sektion style */
 .hero {
   text-align: center;
   padding: 80px 20px;
@@ -202,7 +202,7 @@ main {
   padding: 100px 20px;
 }
 
-/* ====================== Om os side ====================== */
+/* Om os side */
 .omOs-indhold {
   background-color: #ffffff;
   border-radius: 12px;
@@ -233,7 +233,7 @@ main {
   text-decoration: underline;
 }
 
-/* =========================== Partners =========================== */
+/*  Partner siden  */
 .partners {
   padding: 80px 8%;
   background: #f5f7fa;
@@ -260,7 +260,7 @@ main {
   border: 1px solid #e6e6e6;
   transition: 0.25s ease;
   text-align: center;
-  display: flex; /* Tilføjet for at knappen lægger sig i bunden */
+  display: flex; 
   flex-direction: column;
 }
 .partner-card:hover {
@@ -286,11 +286,9 @@ main {
   line-height: 1.4;
   margin-bottom: 20px;
 }
-/* .read-more er nu flyttet til GLOBAL sektionen */
 
-/* =========================== Foto galleri =========================== */
+/* Foto galleri */
 .photo-gallery {
-  /* Fjernet unødvendig width: 100% */
   margin: 0 auto;
   padding: 20px;
   background-color: #ffffff;
@@ -319,11 +317,11 @@ main {
   transform: scale(1.05);
 }
 
-/* =========================== Bogshop Sektion =========================== */
+/* Bogshop Sektion */
 
 main.bookshop-content {
-  max-width: 100%;   /* CHANGED: Allows the grid to expand infinitely based on zoom */
-  width: 95%;        /* Keeps a small buffer on the edges */
+  max-width: 100%;   
+  width: 95%;       
   margin: 0 auto;
   background: #f8f8fb;
   min-height: 100vh;
@@ -364,7 +362,7 @@ main.bookshop-content {
   max-width: 100%; 
 }
 
-/* Fælles styling for både søgefelt og drop-down menuer */
+/* styling for både søgefelt og drop-down menuer */
 #search-bar,
 .bookshop-controls select {
   padding: 0.75rem 1.2rem;
@@ -441,11 +439,6 @@ main.bookshop-content {
 /* Grid og Cards til Bøger */
 .book-grid {
   display: grid;
-  /* 
-     This tells the browser: "Fit as many columns as possible (auto-fill)."
-     "Each column must be at least 260px wide, but can stretch (1fr)."
-     As you zoom out, the screen gets 'wider' in pixels, so more 260px columns fit.
-  */
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 30px;
   margin-top: 0;
@@ -495,7 +488,7 @@ main.bookshop-content {
   color: #A7372B;
 }
 
-/* =========================== Opgave Banken =========================== */
+/* Opgave Banken */
 .content-container {
   max-width: 1000px;
   margin: 40px auto;
