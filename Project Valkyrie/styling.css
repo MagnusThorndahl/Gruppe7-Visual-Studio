@@ -9,8 +9,6 @@ body {
   color: #1a1a40;
 }
 
-/* Ens marginer og afstande for sidens layout */
-/* Dette er nødvendigt for at centrere og begrænse indholdet på dine undersider */
 main {
   max-width: 1000px;
   margin: 0 auto;
@@ -192,7 +190,7 @@ main {
   padding: 100px 20px;
 }
 
-/* ====================== Om os side ====================== */
+/* ====================== Om os siden ====================== */
 .omOs-indhold {
   background-color: #ffffff;
   border-radius: 12px;
@@ -223,7 +221,7 @@ main {
   text-decoration: underline;
 }
 
-/* =========================== Partners =========================== */
+/* =========================== Partner siden =========================== */
 .partners {
   padding: 80px 8%;
   background: #f5f7fa;
@@ -288,7 +286,7 @@ main {
   background: #004ecc;
 }
 
-/* =========================== Foto galleri =========================== */
+/* =========================== Foto galleriet =========================== */
 .photo-gallery {
   max-width: 1000px;
   width: 100%;
@@ -321,7 +319,7 @@ main {
   transform: scale(1.05);
 }
 
-/* =========================== Bogshop Sektion =========================== */
+/* =========================== Bogshoppen =========================== */
 .bookshop-content {
   padding: 60px 8%;
   background: #f8f8fb;
