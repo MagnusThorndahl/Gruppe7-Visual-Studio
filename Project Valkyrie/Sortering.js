@@ -1,9 +1,8 @@
-Søgeinput = document.getElementById("search-bar")
-Sortering = document.getElementById("")
-Sprog = document.getElementById("sprogfilter")
-Pris = document.getElementById("prisfilter")
-Stand = document.getElementById("standfilter")
-Bogliste = document.getElementById("book-list")
+let søgeinput = document.getElementById("search-bar")
+let sprog = document.getElementById("sprogfilter")
+let pris = document.getElementById("prisfilter")
+let stand = document.getElementById("standfilter")
+let bogliste = document.getElementById("book-list")
 
 //Funktion til at sortere pris
 function matcherPris(bog, valgtPris){
@@ -12,7 +11,7 @@ function matcherPris(bog, valgtPris){
     }else if (valgtPris == "lav"){
 return bog.pris <= 100
     }else if (valgtPris == "medium"){
-        return bog.pris >= 101 <=300
+        return bog.pris >= 101 && bog.pris <=300
     }
     else if(valgtPris == "høj"){
         return bog.pris > 300
@@ -21,13 +20,13 @@ return bog.pris <= 100
 
 //Funktion til at sortere stand
 function standKategori(standTekst){
-stand = standTekst.toLowerCase
-if(stand == "ny"){
-    return "ny"
-}else if(stand == "god"){
-    return "god"
+let standLower = standTekst.toLowerCase()
+if(standLower == "som ny"){
+    return "Som ny"
+}else if(standLower == "lettere brugt"){
+    return "Lettere brugt"
 }else{
-    return "brugt"
+    return "Brugt"
 }
 }
 function matcherStand(bog, valgtStand){
@@ -40,51 +39,61 @@ function matcherStand(bog, valgtStand){
 
 //Funktion til at sortere sprog
 function matcherSprog(bog, valgtSprog){
-    if(valgtSprog == "alle"){
+    let bogSprog = bog.sprog.toLowerCase()
+    if(valgtSprog === "alle"){
         return true
-        sprog = bog.sprog.toLowerCase
-    }else if(valgtSprog == "da"){
-        return "dansk"
-    }else if(valgtSprog == "en"){
-        return "engelsk"
-    }else if(valgtSprog == "andre"){
-        return "andre"
+    }else if(valgtSprog === "da"){
+        return bogSprog.includes("dansk")
+    }else if(valgtSprog === "en"){
+        return bogSprog.includes("engelsk")
+    }else if(valgtSprog === "andre"){
+        return !bogSprog.includes("dansk") && !bogSprog.includes("engelsk")
     }
 }
 
 //Søgebar funktion
 function matcherSøgning(bog, søgeTekst){
-    søg = søgeTekst.toLowerCase
-    if(søg == ""){
+    let søg = søgeTekst.toLowerCase()
+    if(søg === ""){
         return true
     }
 
-titel = bog.title.toLowerCase
-forfatter = bog.forfatter.toLowerCase
-sprog = bog.sprog.toLowerCase
+let titel = bog.title.toLowerCase()
+let forfatter = bog.forfatter.toLowerCase()
+let sprog = bog.sprog.toLowerCase()
 
 
-if(titel == "title"){
+if(titel.includes(søg)){
+    return true
+}
+if(forfatter.includes(søg)){
+    return true
+}
+if(sprog.includes(søg)){
     return true
 
-if(forfatter == "forfatter"){
-    return true
-}else{
-    return false
+}
+return false
 }
 
 function OpdaterBogLister(){
-    let søg = Søgeinput.value
-    let valgtSprog = Sprog.value
-    let valgtStand = Stand.value
+    let søg = søgeinput.value
+    let valgtSprog = sprog.value
+    let valgtStand = stand.value
+    let valgtPris = pris.value
 
-    let fitreretListe = []
+    let filtreretListe = []
 
     for(let bog of books){
         if(matcherSøgning(bog, søg) && matcherSprog(bog, valgtSprog) && matcherPris(bog, valgtPris) && matcherStand(bog, valgtStand)){
-            fitreretListe.push(bog)
+            filtreretListe.push(bog)
         }
-        displayBooks(fitreretListe)
     }
+    displayBooks(filtreretListe)
 }
-}
+søgeinput.addEventListener("input", OpdaterBogLister)
+sprog.addEventListener("change", OpdaterBogLister)
+stand.addEventListener("change", OpdaterBogLister)
+pris.addEventListener("change", OpdaterBogLister)
+
+displayBooks(books)
