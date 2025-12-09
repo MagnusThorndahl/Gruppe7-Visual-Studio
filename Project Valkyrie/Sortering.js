@@ -82,14 +82,14 @@ function OpdaterBogLister(){
     let valgtStand = stand.value
     let valgtPris = pris.value
 
-    let filtreretListe = []
+    let filtreretListe = shop.books.filter(bog =>
+        matcherSøgning(bog, søg) &&
+        matcherSprog(bog, valgtSprog) &&
+        matcherPris(bog, valgtPris) &&
+        matcherStand(bog, valgtStand)
+    );
 
-    for(let bog of shop.books){
-        if(matcherSøgning(bog, søg) && matcherSprog(bog, valgtSprog) && matcherPris(bog, valgtPris) && matcherStand(bog, valgtStand)){
-            filtreretListe.push(bog)
-        }
-    }
-    displayBooks(filtreretListe)
+    shop.visFiltreredeBøger(filtreretListe);
 }
 søgeinput.addEventListener("input", OpdaterBogLister)
 sprog.addEventListener("change", OpdaterBogLister)
