@@ -5,7 +5,7 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-y: scroll; /* Forhindrer layout-hop */
+  overflow-y: scroll; /* Forhindrer at layouttet hoppe */
 }
 
 body {
@@ -13,13 +13,9 @@ body {
   font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
   background-color: #d6f1f4;
   color: #1a1a40;
-  
-  /* SIKKERHEDS-FIX: Forhindrer siden i at blive bredere end skærmen */
   overflow-x: hidden;
   width: 100%;
 }
-
-/* SIKKERHEDS-FIX: Sørger for at billeder og inputs aldrig sprænger deres rammer */
 img, select, input, textarea {
   max-width: 100%;
 }
@@ -29,22 +25,6 @@ main {
   max-width: 1000px;
   margin: 0 auto;
   padding: 40px 20px;
-}
-
-/* == Global Knap Design (Genbrugelig) == */
-.read-more {
-  display: inline-block;
-  padding: 10px 16px;
-  background: #0066ff;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: background 0.2s ease;
-  margin-top: auto; 
-}
-.read-more:hover {
-  background: #004ecc;
 }
 
 /* ============================ Navigations bar ============================ */
