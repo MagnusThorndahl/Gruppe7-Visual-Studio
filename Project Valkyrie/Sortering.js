@@ -22,11 +22,11 @@ return bog.pris <= 100
 function standKategori(standTekst){
 let standLower = standTekst.toLowerCase()
 if(standLower == "som ny"){
-    return "Som ny"
+    return "som ny"
 }else if(standLower == "lettere brugt"){
-    return "Lettere brugt"
+    return "lettere brugt"
 }else{
-    return "Brugt"
+    return "brugt"
 }
 }
 function matcherStand(bog, valgtStand){
@@ -84,7 +84,7 @@ function OpdaterBogLister(){
 
     let filtreretListe = []
 
-    for(let bog of books){
+    for(let bog of shop.books){
         if(matcherSøgning(bog, søg) && matcherSprog(bog, valgtSprog) && matcherPris(bog, valgtPris) && matcherStand(bog, valgtStand)){
             filtreretListe.push(bog)
         }
