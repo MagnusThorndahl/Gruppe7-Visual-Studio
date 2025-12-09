@@ -1,13 +1,11 @@
 /* ================================ GLOBAL ================================ */
-*{
+* {
   box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
-  /* Denne linje tvinger en scrollbar frem altid. 
-     Det forhindrer siden i at "hoppe" til siden, når du skifter mellem korte og lange sider. */
-  overflow-y: scroll; 
+  overflow-y: scroll; /* Forhindrer layout-hop */
 }
 
 body {
@@ -15,12 +13,38 @@ body {
   font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
   background-color: #d6f1f4;
   color: #1a1a40;
+  
+  /* SIKKERHEDS-FIX: Forhindrer siden i at blive bredere end skærmen */
+  overflow-x: hidden;
+  width: 100%;
 }
+
+/* SIKKERHEDS-FIX: Sørger for at billeder og inputs aldrig sprænger deres rammer */
+img, select, input, textarea {
+  max-width: 100%;
+}
+
 /* Ens marginer og afstande for sidens layout */
 main {
   max-width: 1000px;
   margin: 0 auto;
   padding: 40px 20px;
+}
+
+/* == Global Knap Design (Genbrugelig) == */
+.read-more {
+  display: inline-block;
+  padding: 10px 16px;
+  background: #0066ff;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.2s ease;
+  margin-top: auto; 
+}
+.read-more:hover {
+  background: #004ecc;
 }
 
 /* ============================ Navigations bar ============================ */
@@ -256,6 +280,8 @@ main {
   border: 1px solid #e6e6e6;
   transition: 0.25s ease;
   text-align: center;
+  display: flex; /* Tilføjet for at knappen lægger sig i bunden */
+  flex-direction: column;
 }
 .partner-card:hover {
   transform: translateY(-6px);
@@ -280,28 +306,13 @@ main {
   line-height: 1.4;
   margin-bottom: 20px;
 }
-.read-more {
-  display: inline-block;
-  padding: 10px 16px;
-  background: #0066ff;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: background 0.2s ease;
-}
-.read-more:hover {
-  background: #004ecc;
-}
+/* .read-more er nu flyttet til GLOBAL sektionen */
 
 /* =========================== Foto galleri =========================== */
-/* Her er rettelsen: Jeg har fjernet den ekstra .book-grid indlejring */
 .photo-gallery {
-  max-width: 1200px;
-  width: 100%;
+  /* Fjernet unødvendig width: 100% */
   margin: 0 auto;
   padding: 20px;
-  box-sizing: border-box;
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
@@ -313,13 +324,11 @@ main {
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
   padding: 40px 20px;
-  box-sizing: border-box;
-  width: 100%;
 }
 
 .gallery-grid img {
   width: 100%;
-  height: 250px; /* Tilføjet fast højde så de ser ens ud */
+  height: 250px; 
   display: block;
   object-fit: cover;
   border-radius: 10px;
@@ -331,10 +340,36 @@ main {
 }
 
 /* =========================== Bogshop Sektion =========================== */
-.bookshop-content {
-  padding: 60px 8%;
+
+main.bookshop-content {
+  max-width: 100%;   /* CHANGED: Allows the grid to expand infinitely based on zoom */
+  width: 95%;        /* Keeps a small buffer on the edges */
+  margin: 0 auto;
   background: #f8f8fb;
   min-height: 100vh;
+  padding: 40px 20px;
+}
+
+/* Hero Header Integration */
+.hero.bookshop-hero {
+  background: transparent;
+  padding: 0 0 30px 0;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero.bookshop-hero h1 {
+  font-size: 3rem;
+  color: #1a1a40;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.hero.bookshop-hero p {
+  color: #555;
+  font-size: 1.1rem;
+  margin-top: 0;
 }
 
 /* Container til søgefelt og filtre */
@@ -345,8 +380,8 @@ main {
   flex-wrap: wrap; 
   gap: 15px;      
   padding: 1rem 0;
-  max-width: 100%;
-  margin: 0 auto;
+  margin: 0 auto 40px auto;
+  max-width: 100%; 
 }
 
 /* Fælles styling for både søgefelt og drop-down menuer */
@@ -356,7 +391,7 @@ main {
   font-size: 1rem;
   font-family: 'Poppins', sans-serif;
   border: 1px solid #ccc;
-  border-radius: 999px; /* "Pill" shape */
+  border-radius: 999px;
   background-color: #ffffff;
   color: #1a1a40;
   outline: none;
@@ -364,14 +399,12 @@ main {
   cursor: pointer;
 }
 
-/* Specifikt for søgefeltet */
 #search-bar {
   flex-grow: 2;
   min-width: 250px;
   cursor: text;
 }
 
-/* Specifikt for select-menuerne */
 .bookshop-controls select {
   flex-grow: 1;
   min-width: 140px; 
@@ -428,10 +461,15 @@ main {
 /* Grid og Cards til Bøger */
 .book-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 24px;
-  margin-top: 40px;
-  padding: 0 10px;
+  /* 
+     This tells the browser: "Fit as many columns as possible (auto-fill)."
+     "Each column must be at least 260px wide, but can stretch (1fr)."
+     As you zoom out, the screen gets 'wider' in pixels, so more 260px columns fit.
+  */
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 30px;
+  margin-top: 0;
+  width: 100%;
 }
 
 .book-card {
@@ -447,7 +485,7 @@ main {
   align-items: center;
   text-align: center;
   font-family: 'Poppins', sans-serif;
-  height: 100%; /* Sikrer at kortene følger gridets højde */
+  height: 100%; 
 }
 
 .book-card:hover {
@@ -475,20 +513,6 @@ main {
 }
 .book-card p strong {
   color: #A7372B;
-}
-.book-card .read-more {
-  display: inline-block;
-  margin-top: auto; /* Skubber knappen ned i bunden hvis kortene har forskellig højde */
-  padding: 8px 14px;
-  background: #0066ff;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: background 0.2s ease;
-}
-.book-card .read-more:hover {
-  background: #004ecc;
 }
 
 /* =========================== Opgave Banken =========================== */
