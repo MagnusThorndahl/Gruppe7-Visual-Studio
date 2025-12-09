@@ -12,4 +12,10 @@ let books = [
   { user: "Leo", title: "Kommunikation i Praksis", stand: "Som ny", pris: 250, årstal: 2020, isbnnr: "9788759332894", sprog: "Dansk", forfatter: "Andersen, Heidi", image: "https://i.imgur.com/gFqE4Ov.jpg" },
   { user: "Peter", title: "Corporate Communication", stand: "Lettere brugt", pris: 80, årstal: 2010, isbnnr: "9781433106217", sprog: "Engelsk", forfatter: "Bookman, Michael B.", image: "https://i.imgur.com/OsntShI.jpg" },
   { user: "Jon", title: "Marketing Communications", stand: "Som ny", pris: 400, årstal: 2025, isbnnr: "9781292737225", sprog: "Engelsk", forfatter: "De Pelsmacker, Patick", image: "https://i.imgur.com/tlNpMsA.jpg" },
+  { user: "Johanna", title: "Die Kunst Der Kommunikation", stand: "Lettere brugt", pris: 300, årstal: 2013, isbnnr: "3456852320", sprog: "Tysk", forfatter: "Hargie, Owen", image: "https://i.imgur.com/oZ46Dmq.jpg" },
+  { user: "Ernesto", title: "Teoría de la Communicación", stand: "Som ny", pris: 250, årstal: 2007, isbnnr: "8448156099", sprog: "Spansk", forfatter: "Serrano, Manuel Martin", image: "https://i.imgur.com/IwaRdpa.jpg" },
+  { user: "Hasan", title: "Analyzing Communication", stand: "Lettere brugt", pris: 150, årstal: 2022, isbnnr: "9788757452976", sprog: "Engelsk", forfatter: "Pedersen, Karsten", image: "https://i.imgur.com/74KF5ZB.jpg" },
+  { user: "Don", title: "Praktisk IT-Projektledelse", stand: "Brugt", pris: 200, årstal: 2004, isbnnr: "9788759311219", sprog: "Dansk", forfatter: "Biering-Sørensen, Stephen", image: "https://i.imgur.com/M6oUUTc.jpg" },
+  { user: "Jonas", title: "IT-Kriminalitet", stand: "Lettere brugt", pris: 600, årstal: 2025, isbnnr: "9788761946089", sprog: "Dansk", forfatter: "Callesen, Lukas", image: "https://i.imgur.com/5j6zRPV.jpg" }
+
 ];
