@@ -19,6 +19,6 @@ let books = [
   { user: "Jonas", title: "IT-Kriminalitet", stand: "Lettere brugt", pris: 600, årstal: 2025, isbnnr: "9788761946089", sprog: "Dansk", format: "Paperback", forfatter: "Callesen, Lukas", image: "https://i.imgur.com/5j6zRPV.jpg" },
   { user: "Miriam", title: "Styr(k) Kommunikationen", stand: "Som ny", pris: 100, årstal: 2015, isbnnr: "9788759321522", sprog: "Dansk", format: "Paperback", forfatter: "Fabricius, Kirstine", image: "https://i.imgur.com/YZtiZD1.jpg" },
   { user: "Mohammed", title: "The Little Book of Data", stand: "Som ny", pris: 80, årstal: 2025, isbnnr: "1400248361", sprog: "Engelsk", format: "Paperback", forfatter: "Evans, Justin", image: "https://i.imgur.com/r2s9nxQ.jpg" },
-  { user: "Tine", title: "McQuail's Media and Mass Communication Theory", stand: "Brugt", pris: 200, årstal: 2020, isbnnr: "9781473902510", format: "Paperback", forfatter: "McQuail, Denis", image: "https://i.imgur.com/fRjHeO2.jpg" }
+  { user: "Tine", title: "McQuail's Media and Mass Communication Theory", stand: "Brugt", pris: 200, årstal: 2020, isbnnr: "9781473902510", sprog: "Engelsk", format: "Paperback", forfatter: "McQuail, Denis", image: "https://i.imgur.com/fRjHeO2.jpg" }
 
 ];
