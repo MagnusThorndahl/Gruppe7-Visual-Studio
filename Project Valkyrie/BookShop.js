@@ -1,5 +1,3 @@
-
-
 class Book {
   constructor(user, title, stand, pris, årstal, isbnnr, sprog, format, forfatter, image) {
     this.user = user;
