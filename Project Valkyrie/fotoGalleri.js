@@ -1,4 +1,4 @@
-// vi definerer her som det første variablerne vi bruger i vores query til Pexels API'et blandt andet api nøgle, id på kollektion osv. //
+// vi definerer her som det første variablerne vi bruger i vores query til Pexels API'et blandt andet api nøgle og kollektionsid //
 let galleri = document.querySelector('.gallery-grid');
 let API_NØGLE = 'qT0vXrdjtj1XR6qkq5DtIeruJL8o3GuGeinzROqNUlFCTR81tE4r425v';
 let kollektionsId ='kriwv7u';
