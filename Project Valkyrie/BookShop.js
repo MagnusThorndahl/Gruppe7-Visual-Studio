@@ -99,59 +99,54 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// ==================== 3. MODAL & ADD BOOK LOGIC ====================
+//opret ny annonce //
 function initModalLogic() {
-  const modal = document.getElementById("book-modal");
-  const openBtn = document.getElementById("add-book-btn");
-  const closeSpan = document.querySelector(".close-modal");
-  const form = document.getElementById("new-book-form");
+  // Hent elementer fra DOM
+  let modal = document.getElementById("book-modal");
+  let openBtn = document.getElementById("add-book-btn");
+  let closeBtn = document.querySelector(".close-modal");
+  let form = document.getElementById("new-book-form");
 
-  // Sikkerhedscheck hvis elementerne ikke findes
-  if (!modal || !openBtn || !form) return;
-
-  // 1. ÅBN MODAL
+  // 1. ÅBN MODAL (Klik på knappen)
   openBtn.addEventListener("click", () => {
     modal.style.display = "flex";
   });
 
   // 2. LUK MODAL (Klik på X)
-  closeSpan.addEventListener("click", () => {
+  closeBtn.addEventListener("click", () => {
     modal.style.display = "none";
   });
 
-  // 3. LUK MODAL (Klik udenfor boksen)
+  // 3. LUK MODAL (Klik udenfor selve boksen)
   window.addEventListener("click", (event) => {
-    if (event.target == modal) {
+    if (event.target === modal) {
       modal.style.display = "none";
     }
   });
 
-  // 4. HÅNDTER OPRETTELSE AF BOG
+  // 4. HÅNDTER FORMULAR (når brugeren opretter ny bog)
   form.addEventListener("submit", (event) => {
-    event.preventDefault(); // Forhindrer side-refresh
+    event.preventDefault(); // Stopper siden fra at opdatere
 
-    // Hent værdier fra inputs
-    const title = document.getElementById("new-title").value;
-    const author = document.getElementById("new-author").value;
-    const sprog = document.getElementById("new-sprog").value;
-    const stand = document.getElementById("new-stand").value;
-    
-    // VIGTIGT: Konverter tal-strenge til Numbers, så sortering virker
-    const price = Number(document.getElementById("new-price").value);
-    const year = Number(document.getElementById("new-year").value);
-    
-    const imageInput = document.getElementById("new-image").value;
-    // Brug placeholder hvis billede-feltet er tomt
-    const image = imageInput ? imageInput : "https://via.placeholder.com/150"; 
-    
-    const user = document.getElementById("new-user").value;
+    // Hent værdier fra inputfelterne
+    let title = document.getElementById("new-title").value;
+    let author = document.getElementById("new-author").value;
+    let sprog = document.getElementById("new-sprog").value;
+    let stand = document.getElementById("new-stand").value;
+    let price = Number(document.getElementById("new-price").value);
+    let year = Number(document.getElementById("new-year").value);
+    let imageInput = document.getElementById("new-image").value;
+    let user = document.getElementById("new-user").value;
 
-    // Hardcoded defaults for felter vi ikke beder om (for simplicitet)
-    const isbn = "N/A";
-    const format = "Paperback";
+    // Brug placeholder-billede hvis der ikke er uploadet et
+    let image = imageInput ? imageInput : "https://via.placeholder.com/150";
 
-    // Opret ny instans af Book
-    const myNewBook = new Book(
+    // Hardkodede standardfelter
+    let isbn = "N/A";
+    let format = "Paperback";
+
+    // Opret et nyt bog-objekt (her bruges Book-klassen)
+    let myNewBook = new Book(
       user,
       title,
       stand,
@@ -164,20 +159,21 @@ function initModalLogic() {
       image
     );
 
-    // Tilføj til listen i memory
+    // Tilføj bogen til listen af bøger
     shop.books.push(myNewBook);
 
     // Opdater visningen
-    // Hvis 'OpdaterBogLister' findes (fra Sortering.js), brug den for at beholde filtre
     if (typeof OpdaterBogLister === "function") {
-      OpdaterBogLister(); 
+      OpdaterBogLister();
     } else {
       shop.visAlleBøger();
     }
 
-    // Reset formular og luk
+    // Ryd formularen og luk modal-vinduet
     form.reset();
     modal.style.display = "none";
+
+    // Giv brugeren en bekræftelse
     alert(`"${title}" er nu sat til salg!`);
   });
 }
