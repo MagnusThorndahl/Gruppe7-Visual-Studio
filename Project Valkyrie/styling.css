@@ -19,15 +19,13 @@ body {
 img, select, input, textarea {
   max-width: 100%;
 }
-
 /* Ens marginer og afstande for sidens layout */
 main {
   max-width: 1000px;
   margin: 0 auto;
   padding: 40px 20px;
 }
-
-/* Navigations bar */
+/* ================================ NAVBAR ================================ */
 .navbar {
   display: flex;
   align-items: center;
@@ -151,7 +149,7 @@ main {
   background-color: #c4006a;
 }
 
-/* Hero sektion style */
+/* ================================ HERO SECTIONS ================================ */
 .hero {
   text-align: center;
   padding: 80px 20px;
@@ -202,7 +200,7 @@ main {
   padding: 100px 20px;
 }
 
-/* Om os side */
+/* ================================ OM OS SIDE ================================ */
 .omOs-indhold {
   background-color: #ffffff;
   border-radius: 12px;
@@ -233,7 +231,7 @@ main {
   text-decoration: underline;
 }
 
-/*  Partner siden  */
+/* ================================ PARTNERS SIDE ================================ */
 .partners {
   padding: 80px 8%;
   background: #f5f7fa;
@@ -287,7 +285,7 @@ main {
   margin-bottom: 20px;
 }
 
-/* Foto galleri */
+/* ================================ FOTO GALLERI ================================ */
 .photo-gallery {
   margin: 0 auto;
   padding: 20px;
@@ -317,7 +315,7 @@ main {
   transform: scale(1.05);
 }
 
-/* Bogshop Sektion */
+/* ================================ BOGSHOP CONTENT ================================ */
 
 main.bookshop-content {
   max-width: 100%;   
@@ -350,7 +348,7 @@ main.bookshop-content {
   margin-top: 0;
 }
 
-/* Container til søgefelt og filtre */
+/* --- Container til søgefelt, filtre OG knap --- */
 .bookshop-controls {
   display: flex;
   justify-content: center;
@@ -358,18 +356,26 @@ main.bookshop-content {
   flex-wrap: wrap; 
   gap: 15px;      
   padding: 1rem 0;
-  margin: 0 auto 40px auto;
+  margin: 0 auto 30px auto; 
   max-width: 100%; 
 }
 
-/* styling for både søgefelt og drop-down menuer */
+/* --- Styling for søgefelt, dropdown menuer OG knappen --- */
+#search-bar,
+.bookshop-controls select,
+#add-book-btn {
+  height: 48px; /* Fælles højde så alt liner perfekt op */
+  border-radius: 999px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  box-sizing: border-box; /* Sikrer at padding ikke øger højden */
+}
+
+/* Input og Select specifik styling */
 #search-bar,
 .bookshop-controls select {
-  padding: 0.75rem 1.2rem;
-  font-size: 1rem;
-  font-family: 'Poppins', sans-serif;
+  padding: 0 1.2rem;
   border: 1px solid #ccc;
-  border-radius: 999px;
   background-color: #ffffff;
   color: #1a1a40;
   outline: none;
@@ -381,6 +387,11 @@ main.bookshop-content {
   flex-grow: 2;
   min-width: 250px;
   cursor: text;
+}
+#search-bar:focus,
+.bookshop-controls select:focus {
+  border-color: #A7372B;
+  box-shadow: 0 0 0 3px rgba(167, 55, 43, 0.18);
 }
 
 .bookshop-controls select {
@@ -394,37 +405,19 @@ main.bookshop-content {
   padding-right: 2.5rem; 
 }
 
-#search-bar::placeholder {
-  color: #999;
-}
-
-#search-bar:hover,
-.bookshop-controls select:hover {
-  border-color: #b5b5b5;
-}
-
-#search-bar:focus,
-.bookshop-controls select:focus {
-  border-color: #A7372B;
-  box-shadow: 0 0 0 3px rgba(167, 55, 43, 0.18);
-  transform: translateY(-1px);
-}
-
-/* Knappen "Tilføj Bog" */
-.add-book {
-  margin-top: 10px;
-  text-align: center;
-}
+/* --- Knappen "Tilføj Bog" specifik styling --- */
 #add-book-btn {
-  padding: 12px 26px;
-  font-size: 1rem;
+  padding: 0 24px;
   font-weight: 600;
   border: none;
-  border-radius: 999px;
   background-color: #A7372B;
   color: #ffffff;
   cursor: pointer;
-  transition: background-color 0.2s ease,transform 0.1s ease,box-shadow 0.2s ease;
+  white-space: nowrap; 
+  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 #add-book-btn:hover {
   background-color: #8b2d23;
@@ -433,7 +426,6 @@ main.bookshop-content {
 }
 #add-book-btn:active {
   transform: translateY(0);
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
 }
 
 /* Grid og Cards til Bøger */
@@ -457,7 +449,6 @@ main.bookshop-content {
   justify-content: flex-start;
   align-items: center;
   text-align: center;
-  font-family: 'Poppins', sans-serif;
   height: 100%; 
 }
 
@@ -488,7 +479,7 @@ main.bookshop-content {
   color: #A7372B;
 }
 
-/* Opgave Banken */
+/* ================================ OPGAVE BANKEN ================================ */
 .content-container {
   max-width: 1000px;
   margin: 40px auto;
@@ -534,4 +525,107 @@ main.bookshop-content {
   color: #0056b3;
   transform: translateX(5px);
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* ================================ MODAL / POP-UP STYLES ================================ */
+
+/* Background Overlay */
+.modal-overlay {
+  position: fixed; 
+  z-index: 1000;   
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.5); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(4px); 
+}
+
+/* Modal Content Box */
+.modal-content {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px; 
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  position: relative;
+  animation: modalFadeIn 0.3s;
+}
+
+@keyframes modalFadeIn {
+  from {transform: translateY(-20px); opacity: 0;}
+  to {transform: translateY(0); opacity: 1;}
+}
+
+/* Close Button (X) */
+.close-modal {
+  color: #aaa;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.close-modal:hover {
+  color: #A7372B;
+}
+
+/* Form Styles inside Modal */
+.form-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+.form-row .form-group {
+  flex: 1;
+}
+.form-group {
+  margin-bottom: 15px;
+}
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+.form-group input, .form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.2s;
+}
+.submit-btn:hover {
+  background-color: #218838;
+}
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  font-size: 0.9em;
+  margin-top: 40px;
 }

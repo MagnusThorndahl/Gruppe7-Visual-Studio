@@ -5,12 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bogshop | KommIT Union</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
-  <!-- CSS -->
   <link rel="stylesheet" href="styling.css">
 </head>
 
 <body>
-  <!-- Navigation Bar -->
   <header class="navbar">
     <div class="logo">
       <img src="https://i.imgur.com/V1zzEfc.png" alt="KommIT Union Logo" class="logo-img">
@@ -44,59 +42,118 @@
     </div>
   </header>
 
-  <!-- Main Content -->
   <main class="bookshop-content">
 
-      <section class="hero bookshop-hero">
-    <h1>Bogshoppen</h1>
-    <p>Find eller sælg brugte studiebøger fra Kommunikation og IT‑studerende.</p>
-  </section>
+    <section class="hero bookshop-hero">
+      <h1>Bogshoppen</h1>
+      <p>Find eller sælg brugte studiebøger fra Kommunikation og IT‑studerende.</p>
+    </section>
 
-    <!-- Search / Filter Bar -->
     <section class="bookshop-controls">
       <input type="text" id="search-bar" placeholder="Søg efter titel eller forfatter">
-     <select id="sprogfilter">
-  <option value="alle">Alle sprog</option>
-  <option value="da">Dansk</option>
-  <option value="en">Engelsk</option>
-  <option value="andre">Andre</option>
-</select>
+      
+      <select id="sprogfilter">
+        <option value="alle">Alle sprog</option>
+        <option value="da">Dansk</option>
+        <option value="en">Engelsk</option>
+        <option value="andre">Andre</option>
+      </select>
 
-<select id="prisfilter">
-  <option value="alle">Alle priser</option>
-  <option value="lav">0 - 100 kr</option>
-  <option value="medium">101 - 300 kr</option>
-  <option value="høj">300+ kr</option>
-</select>
+      <select id="prisfilter">
+        <option value="alle">Alle priser</option>
+        <option value="lav">0 - 100 kr</option>
+        <option value="medium">101 - 300 kr</option>
+        <option value="høj">300+ kr</option>
+      </select>
 
-<select id="standfilter">
-  <option value="alle">Alle stande</option>
-  <option value="som ny">Ny</option>
-  <option value="lettere brugt">God</option>
-  <option value="brugt">Brugt</option>
-</select>
-
+      <select id="standfilter">
+        <option value="alle">Alle stande</option>
+        <option value="som ny">Ny</option>
+        <option value="lettere brugt">God</option>
+        <option value="brugt">Brugt</option>
+      </select>
+      
+      <button id="add-book-btn">Opret ny annonce</button>
     </section>
 
-    <!-- Book List Area -->
-   <section id="book-list" class="book-grid">
-  <!-- Books will be dynamically inserted here by JavaScript in bookshop.js -->
-</section>
-
-    <!-- Add Book Section (optional for future use) -->
-    <section class="add-book">
-      <button id="add-book-btn">Tilføj bog (kommende funktion)</button>
-    </section>
+    <section id="book-list" class="book-grid">
+      </section>
 
   </main>
 
-  <!-- Footer -->
   <footer>
     <p>© 2025/2026 KommIT Union – Bogshoppen</p>
   </footer>
-  <!-- JavaScript -->
- <script src="eksisterendeBøger.js"></script>
-<script src="bookshop.js"></script>
-<script src="Sortering.js"></script>
+
+  <div id="book-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      
+      <h2>Opret ny bog</h2>
+      <p style="margin-bottom: 20px; color: #666; font-size: 0.9rem;">Udfyld detaljerne herunder for at sætte din bog til salg.</p>
+      
+      <form id="new-book-form">
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label>Titel*</label>
+            <input type="text" id="new-title" required placeholder="Titel på bogen">
+          </div>
+          <div class="form-group">
+            <label>Forfatter*</label>
+            <input type="text" id="new-author" required placeholder="Forfatter">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Sprog</label>
+            <select id="new-sprog">
+              <option value="Dansk">Dansk</option>
+              <option value="Engelsk">Engelsk</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Stand</label>
+            <select id="new-stand">
+              <option value="Som ny">Som ny</option>
+              <option value="Lettere brugt">Lettere brugt</option>
+              <option value="Brugt">Brugt</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Pris (kr)*</label>
+            <input type="number" id="new-price" required placeholder="0">
+          </div>
+          <div class="form-group">
+            <label>Årstal</label>
+            <input type="number" id="new-year" placeholder="2023">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Billed URL</label>
+          <input type="text" id="new-image" placeholder="https://..." value="https://via.placeholder.com/150">
+        </div>
+
+        <div class="form-group">
+          <label>Sælgers Navn*</label>
+          <input type="text" id="new-user" required placeholder="Dit navn">
+        </div>
+        
+        <input type="hidden" id="new-isbn" value="">
+        <input type="hidden" id="new-format" value="Paperback">
+
+        <button type="submit" class="submit-btn">Opret Annonce</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="eksisterendeBøger.js"></script>
+  <script src="bookshop.js"></script>
+  <script src="Sortering.js"></script>
 </body>
 </html>
