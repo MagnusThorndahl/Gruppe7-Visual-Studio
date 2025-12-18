@@ -90,5 +90,3 @@ søgeinput.addEventListener("input", OpdaterBogLister)
 sprog.addEventListener("change", OpdaterBogLister)
 stand.addEventListener("change", OpdaterBogLister)
 pris.addEventListener("change", OpdaterBogLister)
-
-visFiltreredeBøger(books)
