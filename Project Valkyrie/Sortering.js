@@ -91,4 +91,4 @@ sprog.addEventListener("change", OpdaterBogLister)
 stand.addEventListener("change", OpdaterBogLister)
 pris.addEventListener("change", OpdaterBogLister)
 
-displayBooks(books)
+visFiltreredeBøger(books)
