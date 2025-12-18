@@ -60,16 +60,11 @@ function matcherSøgning(bog, søgeTekst){
 
 let titel = bog.title.toLowerCase()
 let forfatter = bog.forfatter.toLowerCase()
-let sprog = bog.sprog.toLowerCase()
-
 
 if(titel.includes(søg)){
     return true
 }
 if(forfatter.includes(søg)){
-    return true
-}
-if(sprog.includes(søg)){
     return true
 
 }
