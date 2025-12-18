@@ -1,4 +1,4 @@
-// ==================== 1. BOOK CLASS ====================
+// ==================== 1. BOOK CLASS ==================== //
 class Book {
   constructor(user, title, stand, pris, årstal, isbnnr, sprog, format, forfatter, image) {
     this.user = user;
@@ -34,10 +34,9 @@ class Book {
   }
 }
 
-// ==================== 2. BOOKSHOP CLASS ====================
+// ==================== 2. BOOKSHOP CLASS ==================== //
 class BookShop {
   constructor(bookArray) {
-    // Mapper rå data om til Book-objekter
     this.books = bookArray.map(
       b =>
         new Book(
@@ -86,49 +85,45 @@ class BookShop {
   }
 }
 
-// Global variabel så andre scripts (Sortering.js) kan tilgå den
+// Global variabel så den kan bruges i sortering.js //
 let shop;
 
 document.addEventListener("DOMContentLoaded", () => {
-  // 'books' kommer fra eksisterendeBøger.js
+  // 'books' kommer fra eksisterendeBøger.js filen //
   shop = new BookShop(books);
   shop.init();
 
-  // Initialiser Modal Funktionalitet
   initModalLogic();
 });
 
 
-//opret ny annonce //
+//funktion til at oprette ny annonce //
 function initModalLogic() {
-  // Hent elementer fra DOM
   let modal = document.getElementById("book-modal");
   let openBtn = document.getElementById("add-book-btn");
   let closeBtn = document.querySelector(".close-modal");
   let form = document.getElementById("new-book-form");
 
-  // 1. ÅBN MODAL (Klik på knappen)
+  // 1. åben modul //
   openBtn.addEventListener("click", () => {
     modal.style.display = "flex";
   });
 
-  // 2. LUK MODAL (Klik på X)
+  // lukker pop-uppen ved klik på krydset //
   closeBtn.addEventListener("click", () => {
     modal.style.display = "none";
   });
 
-  // 3. LUK MODAL (Klik udenfor selve boksen)
+  // lukker pop-uppen hvis man klikker udenfor vinduet //
   window.addEventListener("click", (event) => {
     if (event.target === modal) {
       modal.style.display = "none";
     }
   });
 
-  // 4. HÅNDTER FORMULAR (når brugeren opretter ny bog)
   form.addEventListener("submit", (event) => {
-    event.preventDefault(); // Stopper siden fra at opdatere
+    event.preventDefault(); 
 
-    // Hent værdier fra inputfelterne
     let title = document.getElementById("new-title").value;
     let author = document.getElementById("new-author").value;
     let sprog = document.getElementById("new-sprog").value;
@@ -138,14 +133,10 @@ function initModalLogic() {
     let imageInput = document.getElementById("new-image").value;
     let user = document.getElementById("new-user").value;
 
-    // Brug placeholder-billede hvis der ikke er uploadet et
-    let image = imageInput ? imageInput : "https://via.placeholder.com/150";
 
-    // Hardkodede standardfelter
+    let image = imageInput ? imageInput : "https://via.placeholder.com/150";
     let isbn = "N/A";
     let format = "Paperback";
-
-    // Opret et nyt bog-objekt (her bruges Book-klassen)
     let myNewBook = new Book(
       user,
       title,
@@ -159,21 +150,18 @@ function initModalLogic() {
       image
     );
 
-    // Tilføj bogen til listen af bøger
     shop.books.push(myNewBook);
 
-    // Opdater visningen
     if (typeof OpdaterBogLister === "function") {
       OpdaterBogLister();
     } else {
       shop.visAlleBøger();
     }
-
-    // Ryd formularen og luk modal-vinduet
+//lukker vinduet og resetter formen //
     form.reset();
     modal.style.display = "none";
 
-    // Giv brugeren en bekræftelse
+    //afslutter ved at give brugeren en bekræftelse //
     alert(`"${title}" er nu sat til salg!`);
   });
 }
