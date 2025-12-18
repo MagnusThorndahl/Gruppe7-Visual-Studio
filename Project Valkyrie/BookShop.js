@@ -80,7 +80,7 @@ class BookShop {
     });
   }
 
-  init() {
+  visBøgerVedIndlæsning() {
     this.visAlleBøger();
   }
 }
@@ -91,14 +91,14 @@ let shop;
 document.addEventListener("DOMContentLoaded", () => {
   // 'books' kommer fra eksisterendeBøger.js filen //
   shop = new BookShop(books);
-  shop.init();
+  shop.visBøgerVedIndlæsning();
 
-  initModalLogic();
+  nyAnnonce();
 });
 
 
 //funktion til at oprette ny annonce //
-function initModalLogic() {
+function nyAnnonce() {
   let modal = document.getElementById("book-modal");
   let openBtn = document.getElementById("add-book-btn");
   let closeBtn = document.querySelector(".close-modal");
