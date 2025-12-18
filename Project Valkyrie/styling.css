@@ -348,7 +348,7 @@ main.bookshop-content {
   margin-top: 0;
 }
 
-/* --- Container til søgefelt, filtre OG knap --- */
+/* Container til søgefelt, filtre OG knap */
 .bookshop-controls {
   display: flex;
   justify-content: center;
@@ -360,7 +360,7 @@ main.bookshop-content {
   max-width: 100%; 
 }
 
-/* --- Styling for søgefelt, dropdown menuer OG annonce knappen--- */
+/* Styling for søgefelt, dropdown menuer OG annonce knappen */
 #search-bar,
 .bookshop-controls select,
 #add-book-btn {
@@ -405,7 +405,7 @@ main.bookshop-content {
   padding-right: 2.5rem; 
 }
 
-/* --- Knappen "Opret ny annonce" --- */
+/* Knappen "Opret ny annonce" */
 #add-book-btn {
   padding: 0 24px;
   font-weight: 600;
@@ -511,7 +511,7 @@ main.bookshop-content {
   to {transform: translateY(0); opacity: 1;}
 }
 
-/* Close Button (X) */
+/* Close button (X) */
 .close-modal {
   color: #aaa;
   position: absolute;
@@ -526,7 +526,7 @@ main.bookshop-content {
   color: #A7372B;
 }
 
-/* Form Styles inside Modal */
+/* Styling af modal */
 .form-row {
   display: flex;
   gap: 15px;
