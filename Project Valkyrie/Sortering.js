@@ -70,7 +70,7 @@ if(forfatter.includes(søg)){
 }
 return false
 }
-
+//funktion der opdaterer og viser de sorterede bøger 
 function OpdaterBogLister(){
     let søg = søgeinput.value
     let valgtSprog = sprog.value
