@@ -89,7 +89,7 @@ class BookShop {
 let shop;
 
 document.addEventListener("DOMContentLoaded", () => {
-  // 'books' kommer fra eksisterendeBøger.js filen //
+  // 'books' kommer fra eksisterendeBoeger.js filen //
   shop = new BookShop(books);
   shop.visBøgerVedIndlæsning();
 
